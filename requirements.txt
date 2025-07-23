@@ -1,0 +1,8 @@
+langgraph
+langchain
+langchain-groq
+langchain-openai
+requests
+selenium
+bs4
+-e .
