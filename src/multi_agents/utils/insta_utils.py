@@ -2,12 +2,12 @@ import requests
 import random
 import time
 import json
-from multi_agents.constants.constants import COOKIES  , USER_AGENTS
+from multi_agents.constants.constants import COOKIES  , AIRBNB_USER_AGENTS
 
 
 def get_headers(username=None, add_x_ig=None):
     """Return headers with a random User-Agent."""
-    ua = random.choice(USER_AGENTS)
+    ua = random.choice(AIRBNB_USER_AGENTS)
     header = {
         "User-Agent": ua,
         "x-csrftoken": COOKIES["csrftoken"],

@@ -6,3 +6,4 @@ requests
 selenium
 bs4
 -e .
+langchain_core
