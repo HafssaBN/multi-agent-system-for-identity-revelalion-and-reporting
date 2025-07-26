@@ -42,10 +42,16 @@ def get_profile_page_html(driver, url):
         
         # Click "Show all reviews" button and scroll modal
         try:
-            show_all_button_xpath = "//button[contains(., 'Show all') and contains(., 'reviews')]"
-            show_all_button = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, show_all_button_xpath))
+            # Match any button containing both 'show' and 'reviews', case-insensitive
+            show_reviews_button_xpath = (
+                "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'show') "
+                "and contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'reviews')]"
             )
+
+            show_all_button = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, show_reviews_button_xpath))
+            )
+
             # print("Found 'Show all reviews' button. Clicking...")
             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", show_all_button)
             time.sleep(1)
@@ -90,6 +96,12 @@ def scrape_profile_details(soup):
         name_tag = soup.select_one('div.h1oqg76h h2')
         if name_tag:
             details['name'] = name_tag.get_text(strip=True)
+        #h1 = soup.find('h1')
+        #user_data['user_name'] = h1.get_text(strip=True).split(' sur ')[-1] if h1 else 'Not Found'
+        #scrape user imag
+        img_tag = soup.find('img', alt=lambda t: t and 'Profil' in t)
+        details['profile_picture_url'] = img_tag['src'] if img_tag else 'Not Found'
+
         
         # Scrape structured "About" details
         about_heading = soup.find('h1', string=lambda s: s and 'About' in s)

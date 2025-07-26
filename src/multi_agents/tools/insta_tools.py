@@ -14,7 +14,7 @@ InstagramUser = Dict[str, Union[str, bool, Optional[str]]]
 InstagramPost = Dict[str, Union[str, int, Optional[str]]]
 ProfileInfo = Dict[str, Union[str, int, bool, Optional[str]]]
 
-@tool
+#@tool
 def get_instagram_user_id(username: str) -> Optional[str]:
     """
     Retrieves the numeric user ID for a given Instagram username using Instagram's search API.
@@ -76,7 +76,7 @@ def get_instagram_user_id(username: str) -> Optional[str]:
         # print(f"[!] Unexpected error: {e}")
         return None
 
-@tool
+#@tool
 def get_instagram_user_following(user_id: str, limit: int = 100, batch_size: int = 50) -> List[InstagramUser]:
     """
     Retrieves the list of accounts that a user is following on Instagram.
@@ -186,7 +186,7 @@ def get_instagram_user_following(user_id: str, limit: int = 100, batch_size: int
 
     return following[:limit]
 
-@tool
+#@tool
 def get_instagram_user_followers(user_id: str, limit: int = 100, batch_size: int = 50) -> List[InstagramUser]:
     """
     Retrieves the list of accounts following a specific Instagram user.
@@ -299,7 +299,7 @@ def get_instagram_user_followers(user_id: str, limit: int = 100, batch_size: int
 
     return followers[:limit]
 
-@tool
+#@tool
 def get_instagram_user_info(username: str) -> Optional[ProfileInfo]:
     """
     Fetches comprehensive profile information for an Instagram user.
@@ -414,7 +414,7 @@ def get_instagram_user_info(username: str) -> Optional[ProfileInfo]:
         # print(f"[!] An unexpected error occurred: {e}")
         return None
 
-@tool
+#@tool
 def get_instagram_user_posts(user_id: str, limit: int = 24) -> Optional[List[InstagramPost]]:
     """
     Retrieves recent posts from an Instagram user's profile feed.
@@ -538,7 +538,7 @@ def get_instagram_user_posts(user_id: str, limit: int = 24) -> Optional[List[Ins
         })
     return cleaned_posts
 
-@tool
+#@tool
 def download_image(image_url: str, save_path: str = 'profile_pic.jpg') -> Optional[str]:
     """
     Downloads an image from a URL and saves it to the local filesystem.
