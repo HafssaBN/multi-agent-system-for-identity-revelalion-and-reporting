@@ -8,3 +8,8 @@ bs4
 -e .
 langchain_core
 dotenv
+langchain-community 
+pillow 
+requests 
+beautifulsoup4
+google-api-python-client>=2.100.0

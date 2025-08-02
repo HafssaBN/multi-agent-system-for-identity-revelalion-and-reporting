@@ -210,4 +210,6 @@ __marimo__/
 
 
 src/multi_agents/constants/constants.py
-agent-env/*
+*env
+test.py
+collected_code.txt
