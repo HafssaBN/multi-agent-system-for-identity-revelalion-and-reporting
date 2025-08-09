@@ -57,20 +57,24 @@ def get_airbnb_profile_details(profile_url: str) -> Optional[ProfileDetails]:
         }
     """
     
-    driver = initialize_driver()
-    if not driver:
-        return None
-    
-    html_content = get_profile_page_html(driver, profile_url)
-    if not html_content:
-        return None
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-
-    driver.quit()
-    profile_details = scrape_profile_details(soup)
-
-    return profile_details
+    driver = None
+    try:
+        driver = initialize_driver()
+        if not driver:
+            return {"error": "Failed to initialize Selenium WebDriver."}
+        
+        html_content = get_profile_page_html(driver, profile_url)
+        if not html_content:
+            return {"error": f"Failed to get HTML content for {profile_url}. The page may be inaccessible, behind a CAPTCHA, or the structure has changed."}
+        
+        soup = BeautifulSoup(html_content, 'html.parser')
+        profile_details = scrape_profile_details(soup)
+        return profile_details
+    except Exception as e:
+        return {"error": f"An unexpected error occurred in get_airbnb_profile_details: {str(e)}"}
+    finally:
+        if driver:
+            driver.quit()
 
 @tool
 def get_airbnb_profile_places_visited(profile_url: str) -> Optional[List[PlaceVisited]]:
@@ -99,20 +103,24 @@ def get_airbnb_profile_places_visited(profile_url: str) -> Optional[List[PlaceVi
             {'place': 'Ubud, Indonesia', 'details': '2 trips'}
         ]
     """
-    driver = initialize_driver()
-    if not driver:
-        return None
-    
-    html_content = get_profile_page_html(driver, profile_url)
-    if not html_content:
-        return None
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-    driver.quit()
-
-    places_visited = scrape_places_visited(soup)
-    
-    return places_visited
+    driver = None
+    try:
+        driver = initialize_driver()
+        if not driver:
+            return {"error": "Failed to initialize Selenium WebDriver."}
+        
+        html_content = get_profile_page_html(driver, profile_url)
+        if not html_content:
+            return {"error": f"Failed to get HTML content for {profile_url}."}
+        
+        soup = BeautifulSoup(html_content, 'html.parser')
+        places_visited = scrape_places_visited(soup)
+        return places_visited
+    except Exception as e:
+        return {"error": f"An unexpected error occurred in get_airbnb_profile_places_visited: {str(e)}"}
+    finally:
+        if driver:
+            driver.quit()
 
 @tool
 def get_airbnb_profile_listings(profile_url: str) -> Optional[List[Listing]]:
@@ -146,21 +154,24 @@ def get_airbnb_profile_listings(profile_url: str) -> Optional[List[Listing]]:
             }
         ]
     """
-    driver = initialize_driver()
-    if not driver:
-        return None
-    
-    html_content = get_profile_page_html(driver, profile_url)
-    if not html_content:
-        return None
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-
-    driver.quit()
-    listings = scrape_listings(soup, profile_url)
-
-    
-    return listings
+    driver = None
+    try:
+        driver = initialize_driver()
+        if not driver:
+            return {"error": "Failed to initialize Selenium WebDriver."}
+        
+        html_content = get_profile_page_html(driver, profile_url)
+        if not html_content:
+            return {"error": f"Failed to get HTML content for {profile_url}."}
+        
+        soup = BeautifulSoup(html_content, 'html.parser')
+        listings = scrape_listings(soup, profile_url)
+        return listings
+    except Exception as e:
+        return {"error": f"An unexpected error occurred in get_airbnb_profile_listings: {str(e)}"}
+    finally:
+        if driver:
+            driver.quit()
 
 @tool
 def get_airbnb_profile_reviews(profile_url: str) -> Optional[List[Review]]:
@@ -202,20 +213,24 @@ def get_airbnb_profile_reviews(profile_url: str) -> Optional[List[Review]]:
         ]
     """
 
-    driver = initialize_driver()
-    if not driver:
-        return None
-    
-    html_content = get_profile_page_html(driver, profile_url)
-    if not html_content:
-        return None
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-    driver.quit()
-
-    reviews = scrape_reviews(soup)
-    
-    return reviews
+    driver = None
+    try:
+        driver = initialize_driver()
+        if not driver:
+            return {"error": "Failed to initialize Selenium WebDriver."}
+        
+        html_content = get_profile_page_html(driver, profile_url)
+        if not html_content:
+            return {"error": f"Failed to get HTML content for {profile_url}."}
+        
+        soup = BeautifulSoup(html_content, 'html.parser')
+        reviews = scrape_reviews(soup)
+        return reviews
+    except Exception as e:
+        return {"error": f"An unexpected error occurred in get_airbnb_profile_reviews: {str(e)}"}
+    finally:
+        if driver:
+            driver.quit()
 
 @tool
 def get_listing_details(listing_url: str) -> Optional[ListingDetails]:
@@ -268,17 +283,22 @@ def get_listing_details(listing_url: str) -> Optional[ListingDetails]:
             }
         }
     """
-    driver = initialize_driver()
-    if not driver:
-        return None
-    
-    html_content = get_listing_page_html(driver, listing_url)
-    if not html_content:
-        return None
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-    driver.quit()
-    listing_details = scrape_listing_details(soup)
-
-    return listing_details
+    driver = None
+    try:
+        driver = initialize_driver()
+        if not driver:
+            return {"error": "Failed to initialize Selenium WebDriver."}
+        
+        html_content = get_listing_page_html(driver, listing_url)
+        if not html_content:
+            return {"error": f"Failed to get HTML content for listing {listing_url}."}
+        
+        soup = BeautifulSoup(html_content, 'html.parser')
+        listing_details = scrape_listing_details(soup)
+        return listing_details
+    except Exception as e:
+        return {"error": f"An unexpected error occurred in get_listing_details: {str(e)}"}
+    finally:
+        if driver:
+            driver.quit()
 

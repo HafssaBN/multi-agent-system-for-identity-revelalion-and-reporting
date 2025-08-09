@@ -13,3 +13,4 @@ pillow
 requests 
 beautifulsoup4
 google-api-python-client>=2.100.0
+crawl4ai ## pip install -U crawl4ai > crawl4ai-setup

@@ -6,15 +6,22 @@ import logging
 import requests
 from io import BytesIO
 from PIL import Image
+from langchain_groq import ChatGroq
 
 class VisionTools:
     def __init__(self):
-        self.llm = ChatOpenAI(
+        self.llm = ChatGroq(
+            groq_api_key=Constants.GROQ_API_KEY,
+            model_name="qwen/qwen3-32b",
+            temperature=0.1,
+            # max_tokens=4096
+        )
+        '''self.llm = ChatOpenAI(
             base_url=Constants.OPENROUTER_BASE_URL,
             api_key=Constants.OPENROUTER_API_KEY,
             model_name=Constants.DEFAULT_MODEL,
             temperature=0.1
-        )
+        )'''
         self.logger = logging.getLogger(__name__)
     
     def compare_profile_pictures(self, image_urls: Dict[str, str]) -> Dict[str, Any]:
