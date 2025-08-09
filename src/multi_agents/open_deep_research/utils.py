@@ -29,10 +29,9 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 from langgraph.config import get_store
 from mcp import McpError
 from tavily import AsyncTavilyClient
-
-from open_deep_research.configuration import Configuration, SearchAPI
-from open_deep_research.prompts import summarize_webpage_prompt
-from open_deep_research.state import ResearchComplete, Summary
+from multi_agents.open_deep_research.configuration import Configuration, SearchAPI
+from multi_agents.open_deep_research.prompts import summarize_webpage_prompt
+from multi_agents.open_deep_research.state import ResearchComplete, Summary
 
 
 # =======================

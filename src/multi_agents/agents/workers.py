@@ -14,6 +14,69 @@ import json # Import json for clean serialization
 from typing import Dict, Any, Optional
 
 
+# --- NEW: OpenDeepResearchWorker ---------------------------------------------
+import asyncio
+from multi_agents.open_deep_research.deep_researcher import deep_researcher
+from multi_agents.open_deep_research.configuration import Configuration
+
+class OpenDeepResearchWorker:
+    """
+    Thin adapter that calls the Open Deep Research subgraph as a single 'worker' step.
+    It consumes your main AgentState and returns a standard last_step_result payload.
+    """
+    def __init__(self, name: str = "Open_Deep_Research"):
+        self.name = name
+
+    def _build_input(self, state: Dict[str, Any]) -> Dict[str, Any]:
+        # Reuse the user’s original query + the best context you have so far.
+        original_query = state.get("original_query", "")
+        agg = state.get("aggregated_results", {})
+        task = state["plan"][0]["inputs"] if state.get("plan") else original_query
+
+        msg = (
+            f"{task}\n\n"
+            "Context from the investigation so far (may be partial):\n"
+            f"{json.dumps(agg, indent=2, ensure_ascii=False)}"
+        )
+        return {"messages": [HumanMessage(content=msg)]}
+
+    def run(self, state: Dict[str, Any]) -> Dict[str, Any]:
+        try:
+            # Build input + default configuration (env keys are read inside Configuration)
+            dr_input = self._build_input(state)
+            cfg = Configuration()  # pulls from env or configurable overrides
+
+            # Call the subgraph (it’s async). We run to completion synchronously.
+            result = asyncio.run(
+                deep_researcher.ainvoke(dr_input, config={"configurable": cfg.model_dump()})
+            )
+
+            # deep_researcher returns: {"final_report": ..., "messages": [...]} at END
+            final_report = result.get("final_report") or "No report produced."
+
+            return {
+                "last_step_result": {
+                    "worker": self.name,
+                    "results": {self.name: final_report},
+                    "success": True
+                },
+                "last_step_message": AIMessage(content=f"{self.name} completed.\n\n{final_report[:3000]}")
+            }
+        except Exception as e:
+            return {
+                "last_step_result": {
+                    "worker": self.name,
+                    "results": {},
+                    "success": False,
+                    "error": str(e)
+                },
+                "last_step_message": AIMessage(content=f"{self.name} failed with error: {str(e)}")
+            }
+
+
+
+
+
 class BaseWorker:
     # vvv MODIFIED __init__ SIGNATURE vvv
     def __init__(self, tools: list, name: str, system_prompt_extension: str):

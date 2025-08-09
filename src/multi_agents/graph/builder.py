@@ -6,33 +6,38 @@ from ..agents.workers import (
     WebSearchInvestigator,
     SocialMediaInvestigator,
     CrossPlatformValidator,
-    ReportSynthesizer
+    ReportSynthesizer,
+    OpenDeepResearchWorker
 )
 
 class GraphBuilder:
     def __init__(self):
         self.supervisor = Supervisor()
         self.airbnb_analyzer = AirbnbAnalyzer()
-        self.web_search_investigator = WebSearchInvestigator()
+        #self.web_search_investigator = WebSearchInvestigator()
         self.social_media_investigator = SocialMediaInvestigator()
         self.cross_platform_validator = CrossPlatformValidator()
         self.report_synthesizer = ReportSynthesizer()
-        
+        self.open_deep_research = OpenDeepResearchWorker()
+    
     def build_graph(self) -> StateGraph:
         workflow = StateGraph(AgentState)
         
         # Add nodes
         workflow.add_node("supervisor", self.supervisor.run)
         workflow.add_node("airbnb_analyzer", self.airbnb_analyzer.run)
-        workflow.add_node("web_search_investigator", self.web_search_investigator.run)
+        #workflow.add_node("web_search_investigator", self.web_search_investigator.run)
         workflow.add_node("social_media_investigator", self.social_media_investigator.run)
         workflow.add_node("cross_platform_validator", self.cross_platform_validator.run)
         workflow.add_node("report_synthesizer", self.report_synthesizer.run)
-        
+        workflow.add_node("open_deep_research", self.open_deep_research.run)
+
+
         # Define edges
         workflow.add_edge("airbnb_analyzer", "supervisor")
-        workflow.add_edge("web_search_investigator", "supervisor")
+        #workflow.add_edge("web_search_investigator", "supervisor")
         workflow.add_edge("social_media_investigator", "supervisor")
+        workflow.add_edge("open_deep_research", "supervisor")
         workflow.add_edge("cross_platform_validator", "supervisor")
         workflow.add_edge("report_synthesizer", END)
         
@@ -42,10 +47,11 @@ class GraphBuilder:
             self.supervisor.route_to_worker,
             {
                 "airbnb_analyzer": "airbnb_analyzer",
-                "web_search_investigator": "web_search_investigator",
+                #"web_search_investigator": "web_search_investigator",
                 "social_media_investigator": "social_media_investigator",
                 "cross_platform_validator": "cross_platform_validator",
                 "report_synthesizer": "report_synthesizer",
+                "open_deep_research": "open_deep_research",
                 "end": END
             }
         )

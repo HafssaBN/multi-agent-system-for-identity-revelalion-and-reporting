@@ -10,19 +10,20 @@ from langchain_groq import ChatGroq
 
 class Supervisor:
     def __init__(self):
-        self.llm = ChatGroq(
+        '''self.llm = ChatGroq(
             groq_api_key=Constants.GROQ_API_KEY,
             model_name="qwen/qwen3-32b",
             temperature=0.1,
             # max_tokens=4096
         )
-        '''self.llm = ChatOpenAI(
+        '''
+        self.llm = ChatOpenAI(
             base_url=Constants.OPENROUTER_BASE_URL,
             api_key=Constants.OPENROUTER_API_KEY,
             model_name=Constants.DEFAULT_MODEL,
             temperature=0.1,
             max_tokens=4096
-        )'''
+        )
 
         self.parser_llm = ChatGroq(
             groq_api_key=Constants.GROQ_API_KEY,
@@ -40,7 +41,7 @@ class Supervisor:
              
              Available worker agents:
              - airbnb_analyzer: For analyzing Airbnb profiles/listings
-             - web_search_investigator: For performing web searches
+             - open_deep_research: For deep multi-source open web research (runs a subgraph and returns a synthesized report)
              - social_media_investigator: For searching social media platforms
              - cross_platform_validator: For correlating data across platforms
              
@@ -82,7 +83,7 @@ class Supervisor:
 
             # AVAILABLE AGENTS (YOUR TEAM)
             - `airbnb_analyzer`: Extracts structured data from Airbnb profiles.
-            - `web_search_investigator`: Performs deep web searches. Use for broad searches and Google Dorking.
+            - `open_deep_research`: For deep multi-source open web research (runs a subgraph and returns a synthesized report)
             - `social_media_investigator`: Searches specific social media platforms.
             - `cross_platform_validator`: Correlates data across different platforms.
 
