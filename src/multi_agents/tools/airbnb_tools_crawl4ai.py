@@ -269,6 +269,10 @@ def get_airbnb_profile_data(profile_url: str, max_retries: int = 3) -> Dict[str,
                         "error": f"Failed to scrape profile {profile_url} after {max_retries} attempts. Last exception: {error_msg}",
                         "attempts": max_retries
                     }
+        return {
+    "error": "The scraping process completed all retries without a definitive success or failure return.",
+    "attempts": max_retries
+     }
 
     return run_async_tool(ascrape())
 
@@ -419,7 +423,10 @@ def get_listing_details(listing_url: str, max_retries: int = 3) -> Dict[str, Any
                         "error": f"Failed to scrape listing {listing_url} after {max_retries} attempts. Last exception: {error_msg}",
                         "attempts": max_retries
                     }
-
+        return {
+            "error": "The scraping process completed all retries without a definitive success or failure return.",
+            "attempts": max_retries
+        }
     return run_async_tool(ascrape())
 
 

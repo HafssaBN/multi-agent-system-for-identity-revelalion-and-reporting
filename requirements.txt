@@ -1,16 +1,27 @@
 langgraph
 langchain
 langchain-groq
+langgraph-checkpoint-sqlite
 langchain-openai
 requests
 selenium
 bs4
--e .
+selectolax
 langchain_core
 dotenv
+aiosqlite
 langchain-community 
 pillow 
+pandas 
+openpyxl
 requests 
+trafilatura
 beautifulsoup4
 google-api-python-client>=2.100.0
 crawl4ai ## pip install -U crawl4ai > crawl4ai-setup
+sentence_transformers 
+faiss-cpu 
+undetected-playwright 
+playwright-stealth 
+rich 
+loguru

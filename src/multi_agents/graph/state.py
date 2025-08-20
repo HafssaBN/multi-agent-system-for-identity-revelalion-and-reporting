@@ -1,16 +1,31 @@
-from typing import TypedDict, List, Dict, Any, Annotated, Optional
+# src/multi_agents/graph/state.py
+
+from typing import TypedDict, List, Dict, Any, Optional, Annotated
 from langgraph.graph.message import add_messages
-from langchain_core.messages import BaseMessage # Use BaseMessage for broader compatibility
+from langchain_core.messages import BaseMessage
 
 class AgentState(TypedDict):
+    # User request
     original_query: str
+
+    # Planning & history
     plan: List[Dict[str, Any]]
     past_steps: List[Dict[str, Any]]
-    aggregated_results: Dict[str, Any]
-    final_report: str
-    messages: Annotated[list, add_messages]
 
-    # --- ADD THESE NEW KEYS ---
-    # These are transient states to pass data between worker and supervisor
+    # Aggregated outputs from workers
+    aggregated_results: Dict[str, Any]
+
+    # Final report (filled by ReportSynthesizer)
+    final_report: str
+
+    # Conversation buffer for the graph
+    messages: Annotated[List[BaseMessage], add_messages]
+
+    # Transient values passed between nodes
     last_step_result: Optional[Dict[str, Any]]
     last_step_message: Optional[BaseMessage]
+
+    # Human-in-the-loop (HITL)
+    awaiting_user_confirmation: bool
+    candidate_options: List[Dict[str, Any]]
+    selected_candidate: Optional[Dict[str, Any]]

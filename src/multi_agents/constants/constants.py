@@ -6,11 +6,6 @@ load_dotenv()
 
 
 class Constants:
-    #OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-    #OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-    #DEFAULT_MODEL = "openai/gpt-4o"
-    #MAX_ITERATIONS = 10
-
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
     MODEL_FOR_WORKER = "llama-3.3-70b-versatile"
     MODEL = "llama-3.3-70b-versatile"
@@ -25,23 +20,48 @@ class Constants:
         "search": ["tavily_search", "google_search", "web_scraper"],
         "vision": ["compare_profile_pictures"]
     }
+    TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+    OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+
+    # --- Specialized LLM Model Configuration ---
+    # Powerful, high-reasoning model for the supervisor's strategic planning.
+    SUPERVISOR_MODEL = "meta-llama/llama-3.3-70b-instruct" 
+    
+    # Fast, free, and agent-tuned model for the workers' tool-use loops.
+    WORKER_MODEL = "qwen/qwen3-30b-a3b-instruct-2507"
+    
+    
+    # Keep a default for other potential uses
+    DEFAULT_MODEL = "meta-llama/llama-3.3-70b-instruct"
+
+    # --- MoA: Define the Team of Proposer Models ---
+    # These are the "drafters" or "researchers". We want a diverse set.
+    PROPOSER_MODELS = [
+        "meta-llama/llama-3.1-70b-instruct",      # A strong, reliable model
+        "mistralai/mixtral-8x22b-instruct",       # A Mixture-of-Experts model, good at creative tasks
+    ]
+
+    # --- MoA: Define the Planner and Aggregator Models ---
+    # The "Manager" that makes the high-level plan. Needs strong reasoning.
+    PLANNER_MODEL = "mistralai/mixtral-8x22b-instruct" 
+    
+    # The "Editor" that summarizes and refines the work of the proposers.
+    AGGREGATOR_MODEL = "qwen/qwen-2-72b-instruct"
 
 
-# API Keys
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+    # Strong creative writing model for the final report synthesis.
+    SYNTHESIZER_MODEL = "mistralai/mistral-7b-instruct"
+    
 
-# LLM Configuration
-DEFAULT_MODEL = "anthropic/claude-3.5-sonnet"
-TEMPERATURE = 0.1
-MAX_TOKENS = 4000000000
+    
+    SERPAPI_API_KEY= os.getenv("SERPAPI_API_KEY")
 
-# Search Configuration
-MAX_INSTAGRAM_PROFILES = 10
-CONFIDENCE_THRESHOLD = 0.3
-
-
-
-
+    # The VLLM used for forensic image analysis (e.g., comparing profile pictures).
+    VISION_MODEL = "qwen/qwen2.5-vl-32b-instruct"
+    
+    ADVANCED_SERP_BUDGET = int(os.getenv("ADVANCED_SERP_BUDGET", "12"))
+    
 # === Your Instagram cookies here (replace with valid values) ===
 COOKIES = {
     "sessionid": unquote(os.getenv("INSTA_SESSIONID", "")),

@@ -1,0 +1,42 @@
+{
+  "ts": "2025-08-20T11-33-06",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "988e9e09-3d2b-435f-b79d-c33a9883d770",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Abdel is an official guide in Marrakech with 5 years of experience.",
+        "winner": "Tripadvisor",
+        "confidence": 0.7,
+        "reason": "Tripadvisor is a trusted platform for verified reviews, but lacks direct entrepreneurial context."
+      },
+      {
+        "fact": "Abdel Toughrai is a domain investor and web entrepreneur based in Brooklyn, NY.",
+        "winner": "LinkedIn",
+        "confidence": 0.6,
+        "reason": "LinkedIn profiles are generally credible, but location (Brooklyn) conflicts with Marrakech focus."
+      },
+      {
+        "fact": "Luxury Real Estate Expert, Marrakech, @abdel.realty with 10.1K+ followers.",
+        "winner": "Instagram",
+        "confidence": 0.8,
+        "reason": "High follower count and Marrakech alignment suggest relevance, but lacks business verification."
+      },
+      {
+        "fact": "Abdel Houachmi plans to open two Fatburger and Buffalo's Express restaurants in Marrakech.",
+        "winner": "africabusinessplus.com",
+        "confidence": 0.9,
+        "reason": "News article provides specific business plans and Marrakech context, aligning with research scope."
+      },
+      {
+        "fact": "Abdel Mejid Cherif Boudadya founded AMC Travaux and AMC Consulting.",
+        "winner": "LinkedIn",
+        "confidence": 0.85,
+        "reason": "LinkedIn profile details entrepreneurial ventures in Morocco, directly relevant to Marrakech focus."
+      }
+    ],
+    "overall_confidence": 0.78,
+    "should_pause_for_human": true,
+    "human_question": "Which Abdel (Houachmi, Mejid Cherif Boudadya, or others) is the primary subject of the research? Please verify alignment with Marrakech entrepreneurship context."
+  }
+}

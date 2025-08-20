@@ -1,0 +1,42 @@
+{
+  "ts": "2025-08-20T03-31-20",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "6141f2d1-19d3-4528-ae2c-46d72e6df5bb",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Abdel is an official guide in Marrakech with 5 years of experience.",
+        "winner": "TripAdvisor",
+        "confidence": 0.9,
+        "reason": "TripAdvisor is a reputable platform for verified reviews and professional listings, and the claim is corroborated by multiple sources (TripAdvisor, Viator, Marriott Bonvoy)."
+      },
+      {
+        "fact": "Abdel offers Marrakech city tours in the morning and afternoon.",
+        "winner": "TripAdvisor",
+        "confidence": 0.85,
+        "reason": "TripAdvisor and Viator are established travel platforms with user-reviewed content, making them more credible than a single-source claim."
+      },
+      {
+        "fact": "Abdel has a 5.0 rating with 1 review on GoWithGuide.",
+        "winner": "GoWithGuide",
+        "confidence": 0.7,
+        "reason": "While the single review is limited, GoWithGuide is a legitimate platform for guided tours, and the rating is explicitly stated."
+      },
+      {
+        "fact": "Abdel is associated with luxury real estate in Marrakech.",
+        "winner": "abdelrealty.com",
+        "confidence": 0.6,
+        "reason": "The claim is self-promoted on a personal website, which may lack third-party verification, but it is explicitly stated in the research."
+      },
+      {
+        "fact": "Multiple Facebook profiles exist for Abdel Marrakech.",
+        "winner": "Facebook",
+        "confidence": 0.5,
+        "reason": "The existence of multiple profiles suggests ambiguity or potential duplication, reducing credibility for identifying a single individual."
+      }
+    ],
+    "overall_confidence": 0.7,
+    "should_pause_for_human": true,
+    "human_question": "Are the real estate claims on abdelrealty.com and the multiple Facebook profiles for 'Abdel Marrakech' consistent with verified third-party data? Could the real estate association be a separate entity or a self-promoted claim?"
+  }
+}

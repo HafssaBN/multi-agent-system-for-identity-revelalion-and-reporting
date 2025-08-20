@@ -2,252 +2,206 @@
 
 import os
 from enum import Enum
-from typing import Any, List, Optional
+from typing import Any, List, Optional, Dict
 
 from langchain_core.runnables import RunnableConfig
 from pydantic import BaseModel, Field
 
+from ..constants.constants import Constants
+from ..constants.judge_constants import JudgeConstants
+
 
 class SearchAPI(Enum):
     """Enumeration of available search API providers."""
-    
-    ANTHROPIC = "anthropic"
-    OPENAI = "openai"
     TAVILY = "tavily"
     SERPAPI = "serpapi"
     NONE = "none"
 
+
 class MCPConfig(BaseModel):
     """Configuration for Model Context Protocol (MCP) servers."""
-    
-    url: Optional[str] = Field(
-        default=None,
-        optional=True,
-    )
-    """The URL of the MCP server"""
-    tools: Optional[List[str]] = Field(
-        default=None,
-        optional=True,
-    )
-    """The tools to make available to the LLM"""
-    auth_required: Optional[bool] = Field(
-        default=False,
-        optional=True,
-    )
-    """Whether the MCP server requires authentication"""
+    url: Optional[str] = Field(default=None, description="The URL of the MCP server")
+    tools: Optional[List[str]] = Field(default=None, description="The tools to make available to the LLM")
+    auth_required: Optional[bool] = Field(default=False, description="Whether the MCP server requires authentication")
+
 
 class Configuration(BaseModel):
     """Main configuration class for the Deep Research agent."""
-    
-    # General Configuration
-    max_structured_output_retries: int = Field(
-        default=3,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "number",
-                "default": 3,
-                "min": 1,
-                "max": 10,
-                "description": "Maximum number of retries for structured output calls from models"
-            }
-        }
-    )
-    allow_clarification: bool = Field(
-        default=True,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "boolean",
-                "default": True,
-                "description": "Whether to allow the researcher to ask the user clarifying questions before starting research"
-            }
-        }
-    )
-    max_concurrent_research_units: int = Field(
-        default=5,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "slider",
-                "default": 5,
-                "min": 1,
-                "max": 20,
-                "step": 1,
-                "description": "Maximum number of research units to run concurrently. This will allow the researcher to use multiple sub-agents to conduct research. Note: with more concurrency, you may run into rate limits."
-            }
-        }
-    )
-    # Research Configuration
-    search_api: SearchAPI = Field(
-        default=SearchAPI.TAVILY,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "select",
-                "default": "tavily",
-                "description": "Search API to use for research. NOTE: Make sure your Researcher Model supports the selected search API.",
-                "options": [
-                    {"label": "Tavily", "value": SearchAPI.TAVILY.value},
-                    {"label": "OpenAI Native Web Search", "value": SearchAPI.OPENAI.value},
-                    {"label": "Anthropic Native Web Search", "value": SearchAPI.ANTHROPIC.value},
-                    {"label": "None", "value": SearchAPI.NONE.value}
-                ]
-            }
-        }
-    )
-    max_researcher_iterations: int = Field(
-        default=6,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "slider",
-                "default": 6,
-                "min": 1,
-                "max": 10,
-                "step": 1,
-                "description": "Maximum number of research iterations for the Research Supervisor. This is the number of times the Research Supervisor will reflect on the research and ask follow-up questions."
-            }
-        }
-    )
-    max_react_tool_calls: int = Field(
-        default=10,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "slider",
-                "default": 10,
-                "min": 1,
-                "max": 30,
-                "step": 1,
-                "description": "Maximum number of tool calling iterations to make in a single researcher step."
-            }
-        }
-    )
-    # Model Configuration
-    summarization_model: str = Field(
-        default="openai:gpt-4.1-mini",
-        metadata={
-            "x_oap_ui_config": {
-                "type": "text",
-                "default": "openai:gpt-4.1-mini",
-                "description": "Model for summarizing research results from Tavily search results"
-            }
-        }
-    )
-    summarization_model_max_tokens: int = Field(
-        default=8192,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "number",
-                "default": 8192,
-                "description": "Maximum output tokens for summarization model"
-            }
-        }
-    )
-    max_content_length: int = Field(
-        default=50000,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "number",
-                "default": 50000,
-                "min": 1000,
-                "max": 200000,
-                "description": "Maximum character length for webpage content before summarization"
-            }
-        }
-    )
-    research_model: str = Field(
-        default="openai:gpt-4.1",
-        metadata={
-            "x_oap_ui_config": {
-                "type": "text",
-                "default": "openai:gpt-4.1",
-                "description": "Model for conducting research. NOTE: Make sure your Researcher Model supports the selected search API."
-            }
-        }
-    )
-    research_model_max_tokens: int = Field(
-        default=10000,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "number",
-                "default": 10000,
-                "description": "Maximum output tokens for research model"
-            }
-        }
-    )
-    compression_model: str = Field(
-        default="openai:gpt-4.1",
-        metadata={
-            "x_oap_ui_config": {
-                "type": "text",
-                "default": "openai:gpt-4.1",
-                "description": "Model for compressing research findings from sub-agents. NOTE: Make sure your Compression Model supports the selected search API."
-            }
-        }
-    )
-    compression_model_max_tokens: int = Field(
-        default=8192,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "number",
-                "default": 8192,
-                "description": "Maximum output tokens for compression model"
-            }
-        }
-    )
-    final_report_model: str = Field(
-        default="openai:gpt-4.1",
-        metadata={
-            "x_oap_ui_config": {
-                "type": "text",
-                "default": "openai:gpt-4.1",
-                "description": "Model for writing the final report from all research findings"
-            }
-        }
-    )
-    final_report_model_max_tokens: int = Field(
-        default=10000,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "number",
-                "default": 10000,
-                "description": "Maximum output tokens for final report model"
-            }
-        }
-    )
-    # MCP server configuration
-    mcp_config: Optional[MCPConfig] = Field(
-        default=None,
-        optional=True,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "mcp",
-                "description": "MCP server configuration"
-            }
-        }
-    )
-    mcp_prompt: Optional[str] = Field(
-        default=None,
-        optional=True,
-        metadata={
-            "x_oap_ui_config": {
-                "type": "text",
-                "description": "Any additional instructions to pass along to the Agent regarding the MCP tools that are available to it."
-            }
-        }
-    )
 
+    # ---------------- General ----------------
+    max_structured_output_retries: int = 3
+    allow_clarification: bool = Field(default=True)
+    max_concurrent_research_units: int = Field(default=5)
+
+    # ---------------- Research ----------------
+    search_api: SearchAPI = Field(default=SearchAPI.TAVILY)
+    max_researcher_iterations: int = Field(default=10)
+    max_react_tool_calls: int = Field(default=15)
+
+    # Planner/tooling budgets
+    max_supervisor_turns: int = Field(default=6)
+    max_tool_calls_per_turn: int = Field(default=3)            # tool calls the planner may issue at once
+    max_total_serp_calls: int = Field(default=12)              # hard cap across ALL engines for a full run
+    max_pages_per_engine: int = Field(default=2)               # keep modest to control spend/latency
+    page_size_per_engine: int = Field(default=10)
+
+    # Timeouts used in deepresearcher.py
+    search_timeout_seconds: int = Field(default=15)            # per-tool call timeout
+    moa_timeout_seconds: int = Field(default=30)               # per-proposer timeout when delegating
+
+    # ---------------- Judge / SMoA-MoA controls ----------------
+    use_judge: bool = True
+    judge_model: str = Field(default_factory=lambda: JudgeConstants.JUDGE_MODEL)                        # fallback to JudgeConstants in factory
+    candidate_extraction_model: Optional[str] = None           # optional LLM top-up for candidate parsing
+
+    # Robust-judging knobs (mirrors JudgeConstants; overridable per-run/env)
+    enable_committee_judge: bool = Field(default=JudgeConstants.JUDGE_ENABLE_COMMITTEE)
+    enable_self_consistency_judge: bool = Field(default=JudgeConstants.JUDGE_ENABLE_SELF_CONSISTENCY)
+    self_consistency_runs: int = Field(default=JudgeConstants.JUDGE_SELF_CONSISTENCY_RUNS)
+    enable_swap_mitigation: bool = Field(default=JudgeConstants.JUDGE_ENABLE_SWAP)
+    enable_judge_calibration: bool = Field(default=bool(int(os.getenv("JUDGE_ENABLE_CALIBRATION", "1"))))
+
+    pause_threshold: float = Field(default=JudgeConstants.JUDGE_PAUSE_THRESHOLD)
+    delta_thresh: float = Field(default=JudgeConstants.JUDGE_DELTA_THRESH)
+    judge_rubric: str = Field(default=JudgeConstants.JUDGE_RUBRIC)
+
+    # SMoA routing hint (automatic aspect inference)
+    router_aspect_auto: bool = Field(default=True)             # if True, infer aspect when not provided
+    router_aspect_model: Optional[str] = None                  # if None, reuse aggregator_model
+
+    # ---------------- LLM selections ----------------
+    proposer_models: List[str] = Field(default=Constants.PROPOSER_MODELS)
+    aggregator_model: str = Field(default=Constants.AGGREGATOR_MODEL)
+    planner_model: str = Field(default=Constants.PLANNER_MODEL)
+    final_report_model: str = Field(default=Constants.SYNTHESIZER_MODEL)
+
+    # ---------------- MCP ----------------
+    mcp_config: Optional[MCPConfig] = Field(default=None)
+    mcp_prompt: Optional[str] = Field(default=None)
+
+    # ---------- Factory ----------
 
     @classmethod
     def from_runnable_config(
         cls, config: Optional[RunnableConfig] = None
     ) -> "Configuration":
-        """Create a Configuration instance from a RunnableConfig."""
-        configurable = config.get("configurable", {}) if config else {}
-        field_names = list(cls.model_fields.keys())
-        values: dict[str, Any] = {
-            field_name: os.environ.get(field_name.upper(), configurable.get(field_name))
-            for field_name in field_names
-        }
-        return cls(**{k: v for k, v in values.items() if v is not None})
+        """
+        Build Configuration from:
+          1) class defaults,
+          2) environment variables (UPPERCASE),
+          3) per-run `config.configurable`.
+
+        Also coerces ints/bools/floats, parses SearchAPI, and sets safe fallbacks
+        for judge + LLM selections.
+        """
+        # Helpers
+        def _coerce_bool(v: Any) -> Any:
+            if isinstance(v, bool):
+                return v
+            if isinstance(v, str):
+                return v.strip().lower() in {"1", "true", "yes", "y", "on"}
+            return v
+
+        def _coerce_int(v: Any) -> Any:
+            try:
+                return int(str(v).strip())
+            except Exception:
+                return v
+
+        def _coerce_float(v: Any) -> Any:
+            try:
+                return float(str(v).strip())
+            except Exception:
+                return v
+
+        def _parse_search_api(v: Any) -> SearchAPI:
+            if isinstance(v, SearchAPI):
+                return v
+            if isinstance(v, str):
+                s = v.strip().lower()
+                for opt in SearchAPI:
+                    if s == opt.value or s == opt.name.lower():
+                        return opt
+            return SearchAPI.TAVILY
+
+        # 1) Start from class defaults
+        base = cls()
+
+        # 2) Overlay ENV (uppercase field names)
+        env_overlay: Dict[str, Any] = {}
+        for name in cls.model_fields.keys():
+            env_val = os.environ.get(name.upper())
+            if env_val is not None:
+                env_overlay[name] = env_val
+
+        # 3) Overlay run-time config.configurable
+        cfg_overlay = (config or {}).get("configurable", {})
+
+        merged = {**base.model_dump(), **env_overlay, **cfg_overlay}
+
+        # 4) Coerce known numeric fields (ints)
+        for k in [
+            "max_structured_output_retries",
+            "max_concurrent_research_units",
+            "max_researcher_iterations",
+            "max_react_tool_calls",
+            "max_supervisor_turns",
+            "max_tool_calls_per_turn",
+            "max_total_serp_calls",
+            "max_pages_per_engine",
+            "page_size_per_engine",
+            "search_timeout_seconds",
+            "moa_timeout_seconds",
+            "self_consistency_runs",
+        ]:
+            if k in merged:
+                merged[k] = _coerce_int(merged[k])
+
+        # 5) Coerce float fields
+        for k in [
+            "pause_threshold",
+            "delta_thresh",
+        ]:
+            if k in merged:
+                merged[k] = _coerce_float(merged[k])
+
+        # 6) Coerce bool fields
+        for k in [
+            "allow_clarification",
+            "use_judge",
+            "enable_committee_judge",
+            "enable_self_consistency_judge",
+            "enable_swap_mitigation",
+            "enable_judge_calibration",
+            "router_aspect_auto",
+        ]:
+            if k in merged:
+                merged[k] = _coerce_bool(merged[k])
+
+        # 7) Parse enum(s)
+        if "search_api" in merged:
+            merged["search_api"] = _parse_search_api(merged["search_api"])
+
+        # 8) Judge model fallback (prefer JudgeConstants)
+        jm = merged.get("judge_model")
+        if not jm:
+            merged["judge_model"] = JudgeConstants.JUDGE_MODEL
+
+        # 9) Router aspect model fallback: reuse aggregator if unspecified
+        if not merged.get("router_aspect_model"):
+            merged["router_aspect_model"] = merged.get("aggregator_model", Constants.AGGREGATOR_MODEL)
+
+        # 10) Candidate extraction model fallback: reuse aggregator if unspecified
+        if not merged.get("candidate_extraction_model"):
+            merged["candidate_extraction_model"] = merged.get("aggregator_model", Constants.AGGREGATOR_MODEL)
+
+        # 11) Ensure core model defaults remain if env cleared them
+        merged.setdefault("planner_model", Constants.PLANNER_MODEL)
+        merged.setdefault("aggregator_model", Constants.AGGREGATOR_MODEL)
+        merged.setdefault("final_report_model", Constants.SYNTHESIZER_MODEL)
+        merged.setdefault("proposer_models", Constants.PROPOSER_MODELS)
+
+        return cls(**merged)
 
     class Config:
-        """Pydantic configuration."""
-        
         arbitrary_types_allowed = True
