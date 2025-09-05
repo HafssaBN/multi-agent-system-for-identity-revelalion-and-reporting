@@ -1,0 +1,37 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this information, and it is directly sourced from the Airbnb profile."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The URL is explicitly provided and verifiable via Airbnb's public profile."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The URLs are directly linked to the host's Airbnb listing and are publicly accessible."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Names and locations are derived from public reviews, but some entries are marked as 'Unknown' due to privacy settings."
+    },
+    {
+      "fact": "Pictures of the Listing",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The image URLs are directly sourced from the Airbnb listing and are publicly available."
+    }
+  ],
+  "overall_confidence": 1.0,
+  "should_pause_for_human": false,
+  "human_question": "No additional agents provided findings for comparison. Are there other agents to evaluate?"
+}

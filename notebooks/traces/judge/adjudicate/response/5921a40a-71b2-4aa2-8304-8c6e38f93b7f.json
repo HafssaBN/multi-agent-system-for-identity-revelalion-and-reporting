@@ -1,0 +1,3 @@
+{
+  "raw_text": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"What is the professional background and online presence of Abdel from Marrakech?\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.3,\n      \"reason\": \"The search timed out and no results were found. The agent recommends a reverse image search, but no actionable data exists yet.\"\n    }\n  ],\n  \"overall_confidence\": 0.3,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Perform a reverse image search using Google Lens or a similar tool on the provided profile image to identify Abdel's online presence.\"\n}"
+}

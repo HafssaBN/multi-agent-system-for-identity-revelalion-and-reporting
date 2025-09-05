@@ -1,0 +1,31 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Abdel",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The agent provided a verified and consistent name directly from the profile."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The URL is explicitly provided and appears to be a direct link from Airbnb's database."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The URLs are specific and directly linked to the host's profile, indicating credible sourcing."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Some locations are marked as 'N/A,' but the majority of names and locations align with typical Airbnb review patterns."
+    }
+  ],
+  "overall_confidence": 0.975,
+  "should_pause_for_human": false,
+  "human_question": ""
+}

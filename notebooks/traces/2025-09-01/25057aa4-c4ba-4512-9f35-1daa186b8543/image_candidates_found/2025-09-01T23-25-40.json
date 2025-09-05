@@ -1,0 +1,20 @@
+{
+  "ts": "2025-09-01T23-25-40",
+  "kind": "image_candidates_found",
+  "run_id": "25057aa4-c4ba-4512-9f35-1daa186b8543",
+  "payload": {
+    "count": 2,
+    "candidates": [
+      {
+        "name": "ERG (Eastern Research Group Inc.)",
+        "url": "https://www.erg.com/",
+        "why": "Visually similar match from reverse image/Lens search"
+      },
+      {
+        "name": "Welcome to ERG International | Contract Furniture | Hospitality ...",
+        "url": "https://www.erginternational.com/",
+        "why": "Visually similar match from reverse image/Lens search"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Directly extracted from Airbnb profile with supporting review data."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Valid image URL from Airbnb profile, though reverse search failed to identify external social media."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Specific guest names and locations listed in Airbnb reviews, though some locations are 'Unknown'."
+    },
+    {
+      "fact": "Image Search Results",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.2,
+      "reason": "Open_deep_research results are irrelevant Arabic Wikipedia pages unrelated to the host."
+    }
+  ],
+  "overall_confidence": 0.75,
+  "should_pause_for_human": false,
+  "human_question": "Are the Arabic Wikipedia results from open_deep_research a false positive? Consider verifying with additional image search tools."
+}

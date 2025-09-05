@@ -1,0 +1,42 @@
+{
+  "ts": "2025-08-20T15-14-37",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "5cca22da-2a7a-4ff5-b9b5-11b800c0d37e",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "Airbnb_Analyzer explicitly states the host's name as 'Abdel' with contextual details (verified entrepreneur in Marrakech), while open_deep_research only mentions 'Abdel' without verification or context."
+      },
+      {
+        "fact": "Profile Picture URL",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.9,
+        "reason": "Airbnb_Analyzer provides a direct, actionable URL to the profile picture, whereas open_deep_research only references the image without a URL or analysis."
+      },
+      {
+        "fact": "Listing URLs",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.92,
+        "reason": "Airbnb_Analyzer lists 10 verified Airbnb listing URLs, while open_deep_research has no actionable URLs due to a search timeout."
+      },
+      {
+        "fact": "Reviewer Names & Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.88,
+        "reason": "Airbnb_Analyzer provides specific reviewer names and locations (e.g., 'Zouheir from Casablanca'), while open_deep_research has no such data."
+      },
+      {
+        "fact": "Entrepreneurial Claims",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.85,
+        "reason": "Airbnb_Analyzer cites the host's self-described entrepreneurial status and suggests follow-up research, while open_deep_research acknowledges a lack of evidence due to search failures."
+      }
+    ],
+    "overall_confidence": 0.87,
+    "should_pause_for_human": true,
+    "human_question": "Should we perform a reverse image search on the provided profile picture URL to verify Abdel's identity and entrepreneurial claims?"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ts": "2025-09-01T23-26-18",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "6318d2f8-eb8c-46bb-8854-0d0e0769b052",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "No results from google_maps_search",
+        "winner": "direct_search_summary",
+        "confidence": 0.9,
+        "reason": "The agent explicitly states no results were found, indicating a reliable conclusion based on direct search attempts."
+      },
+      {
+        "fact": "No reverse image search results",
+        "winner": "direct_search_summary",
+        "confidence": 0.85,
+        "reason": "The agent confirms no useful results from Lens, a trusted reverse image tool, supporting the credibility of this finding."
+      },
+      {
+        "fact": "No web search candidates found",
+        "winner": "direct_search_summary",
+        "confidence": 0.8,
+        "reason": "The agent systematically reports no candidates, aligning with the lack of other findings and suggesting thoroughness."
+      }
+    ],
+    "overall_confidence": 0.2,
+    "should_pause_for_human": true,
+    "human_question": "Expand search parameters to include social media platforms and alternative search engines to verify Hassan's online presence."
+  }
+}

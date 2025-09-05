@@ -1,0 +1,49 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Directly provided by Airbnb profile with supporting context from reviews."
+    },
+    {
+      "fact": "Host Profession: French Teacher",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Explicitly stated in Airbnb profile description with no conflicting data."
+    },
+    {
+      "fact": "Host Location: Tangier, Morocco",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Consistent with listing location and profile details."
+    },
+    {
+      "fact": "Listing Description: Clean apartment with positive reviews",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.8,
+      "reason": "Supported by guest reviews and property description from Airbnb."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.75,
+      "reason": "Valid URL from Airbnb, though no external verification was attempted."
+    },
+    {
+      "fact": "Reviewer Names and Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.7,
+      "reason": "Provided by Airbnb reviews but lacks independent corroboration."
+    },
+    {
+      "fact": "External Verification of Hassan's Identity",
+      "winner": "open_deep_research",
+      "confidence": 0.3,
+      "reason": "Confirmed no external matches via Google search, indicating limited public information."
+    }
+  ],
+  "overall_confidence": 0.65,
+  "should_pause_for_human": true,
+  "human_question": "Should we refine the search query to include additional keywords (e.g., 'Hassan French teacher Tangier Airbnb') or expand beyond Airbnb's site to verify the host's identity?"
+}

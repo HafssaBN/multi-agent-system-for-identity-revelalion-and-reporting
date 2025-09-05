@@ -1,0 +1,61 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Directly extracted from the Airbnb profile URL and listing details."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Provided as a direct link from the Airbnb profile."
+    },
+    {
+      "fact": "Listing URL: https://www.airbnb.com/rooms/1464489937221305511",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Directly linked from the host's Airbnb profile."
+    },
+    {
+      "fact": "Listing name: 'Tingis, welcome.'",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Extracted from the Airbnb listing metadata, but requires verification via the listing URL."
+    },
+    {
+      "fact": "Location: Tangier, Morocco",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Mentioned in the listing description, but exact location details may need cross-checking."
+    },
+    {
+      "fact": "Rating: 4.88 out of 5 stars from 8 reviews",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Official Airbnb profile explicitly states this metric."
+    },
+    {
+      "fact": "Occupation: French teacher",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Stated in the bio, but could be self-reported and unverified."
+    },
+    {
+      "fact": "Epicurean, loves to travel and motorcycle",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Self-reported bio details; no external validation provided."
+    },
+    {
+      "fact": "Reviewers' names and locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Extracted from Airbnb reviews, but some locations are marked as 'Unknown.'"
+    }
+  ],
+  "overall_confidence": 0.93,
+  "should_pause_for_human": false,
+  "human_question": "Would you like to proceed with the suggested follow-up actions (e.g., reverse image search, web search for 'Hassan French teacher Tangier') to verify or expand on these findings?"
+}

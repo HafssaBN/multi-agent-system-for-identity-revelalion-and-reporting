@@ -1,0 +1,37 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The name is directly provided in the profile summary with no conflicting data."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The URL is explicitly listed and matches the profile description."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The URLs are directly linked to the host's profile and listing."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Names and locations are listed in reviews, but some locations are marked as 'Unknown' which slightly reduces confidence."
+    },
+    {
+      "fact": "Pictures of the listing",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "The image URLs are directly sourced from the listing page."
+    }
+  ],
+  "overall_confidence": 0.98,
+  "should_pause_for_human": false,
+  "human_question": "No conflicting agents to compare. All facts are derived from a single source. Proceed with the provided data?"
+}

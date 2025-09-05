@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-20T15-14-11",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "9e51437b-14b7-4f3e-8eb5-4e68ad113126",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [],\n  \"overall_confidence\": 0.2,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Perform a reverse image search using the provided profile image URL (https://a0.muscache.com/im/pictures/user/User/original/213a678f-2d3c-4b11-886e-df873b318aa4.jpeg?im_w=720) to identify Abdel's online profile and entrepreneurial activities in Marrakech.\"\n}"
+  }
+}

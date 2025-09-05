@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-20T13-50-15",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "9e9917fd-6b32-4547-bc08-6e9258474857",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Abdel\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Name is directly extracted from the Airbnb profile and corroborated by verified status.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.98,\n      \"reason\": \"URL is a direct link from Airbnb's official domain, indicating authenticity.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.97,\n      \"reason\": \"URLs are valid Airbnb property links, suggesting accurate data extraction.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.85,\n      \"reason\": \"Names and locations align with typical Airbnb review patterns, though 'N/A' entries may indicate incomplete data.\"\n    }\n  ],\n  \"overall_confidence\": 0.93,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Are there additional steps to verify the authenticity of the profile picture or business claims?\"\n}"
+  }
+}

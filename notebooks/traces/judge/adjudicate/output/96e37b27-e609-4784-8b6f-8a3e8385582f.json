@@ -1,0 +1,31 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Yahya",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Directly extracted from the profile bio and verified by multiple guest reviews."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Provided as a direct link from the Airbnb profile, though external validation is recommended."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Multiple URLs listed directly from the host's profile, indicating credibility."
+    },
+    {
+      "fact": "Reviewer Names and Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.75,
+      "reason": "Names and locations are listed but some entries lack location data (N/A), reducing confidence."
+    }
+  ],
+  "overall_confidence": 0.85,
+  "should_pause_for_human": false,
+  "human_question": "Are there additional sources to verify the N/A reviewer locations or confirm the host's academic background?"
+}

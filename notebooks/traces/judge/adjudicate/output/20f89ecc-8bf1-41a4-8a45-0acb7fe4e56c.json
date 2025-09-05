@@ -1,0 +1,73 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Directly extracted from Airbnb profile data."
+    },
+    {
+      "fact": "French teacher from Tangier, Morocco",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Profile description claims this, but requires external verification for accuracy."
+    },
+    {
+      "fact": "Single listing on Airbnb",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Confirmed via listing URL and profile summary."
+    },
+    {
+      "fact": "Well-maintained and clean apartment",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.75,
+      "reason": "Based on guest reviews, which may be subjective but consistent."
+    },
+    {
+      "fact": "Positive reviews from guests",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.8,
+      "reason": "Reviewers' names and locations are listed, but content is not fully provided."
+    },
+    {
+      "fact": "Respectful and kind individual",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.7,
+      "reason": "Subjective trait derived from profile and reviews; lacks independent corroboration."
+    },
+    {
+      "fact": "Cultured man who values good company and food",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.65,
+      "reason": "Self-reported profile information; requires cross-checking with external sources."
+    },
+    {
+      "fact": "Convenient location with public transport, shops, and restaurants",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Listing details and guest reviews support this claim."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Directly linked to Airbnb's official image hosting service."
+    },
+    {
+      "fact": "Listing URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Valid Airbnb room listing URL format."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.8,
+      "reason": "Names and locations appear to be genuine based on Airbnb review structure."
+    }
+  ],
+  "overall_confidence": 0.82,
+  "should_pause_for_human": false,
+  "human_question": "Would you like to proceed with the suggested follow-up actions (e.g., reverse image search, web search) to verify Hassan's identity further?"
+}

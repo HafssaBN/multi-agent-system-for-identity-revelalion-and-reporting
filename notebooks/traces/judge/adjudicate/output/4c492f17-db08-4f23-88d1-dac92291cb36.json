@@ -1,0 +1,19 @@
+{
+  "verdicts": [
+    {
+      "fact": "Hassan is a French teacher in Tangier",
+      "winner": "Hassan Zizy",
+      "confidence": 0.7,
+      "reason": "Superprof profile explicitly states Hassan Zizy is a French teacher with a 2014 start date and secondary school teaching experience, directly matching the research question. Hassan Belhaj's LinkedIn profile mentions an English Language Centre, which is less specific to French teaching."
+    },
+    {
+      "fact": "Online presence verification",
+      "winner": "Hassan Zizy",
+      "confidence": 0.6,
+      "reason": "Superprof profile (URL 1) provides a direct digital footprint as a language educator, while Hassan Belhaj's LinkedIn profile (URL 2) lacks specific French teaching details. Other Hasons (e.g., Hassan II, Djeebet) are unrelated to the query."
+    }
+  ],
+  "overall_confidence": 0.65,
+  "should_pause_for_human": true,
+  "human_question": "Verify Hassan Zizy's Superprof profile and Hassan Belhaj's LinkedIn page to confirm their French teaching roles in Tangier. Check if the profile image matches either candidate."
+}

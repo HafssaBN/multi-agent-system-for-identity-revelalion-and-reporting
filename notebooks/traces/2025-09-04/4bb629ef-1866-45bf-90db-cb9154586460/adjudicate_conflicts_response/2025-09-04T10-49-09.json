@@ -1,0 +1,8 @@
+{
+  "ts": "2025-09-04T10-49-09",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "4bb629ef-1866-45bf-90db-cb9154586460",
+  "payload": {
+    "raw_text_preview": "\n\n{\n  \"verdicts\": [\n    {\"fact\": \"Host Name: Hassan\", \"winner\": \"Airbnb_Analyzer\", \"confidence\": 0.95, \"reason\": \"The name is directly provided in the profile and corroborated by multiple reviewer mentions in the listing context.\"},\n    {\"fact\": \"Host Location: Tangier, Morocco\", \"winner\": \"Airbnb_Analyzer\", \"confidence\": 0.9, \"reason\": \"The location is explicitly stated in the profile and aligns with the listing's geographic context.\"},\n    {\"fact\": \"Host Profession: French teacher\", \"winner\": \"Airbnb_Analyzer\", \"confidence\": 0.85, \"reason\": \"The profession is mentioned in the profile but lacks external verification sources in the provided data.\"},\n    {\"fact\": \"Profile Picture URL\", \"winner\": \"Airbnb_Analyzer\", \"confidence\": 0.98, \"reason\": \"The URL is a direct link from the platform, likely authentic and verifiable via reverse image search.\"},\n    {\"fact\": \"Listing URLs\", \"winner\": \"Airbnb_Analyzer\", \"confidence\": 0.97, \"reason\": \"The URLs are specific and directly linked to the host's account, indicating high credibility.\"},\n    {\"fact\": \"Reviewer Names & Locations\", \"winner\": \"Airbnb_Analyzer\", \"confidence\": 0.8, \"reason\": \"Names and locations are listed but lack cross-referenced validation; some entries are marked as 'Unknown'.\"}\n  ],\n  \"overall_confidence\": 0.9,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Are there additional agents or data sources to cross-verify the host's profession and reviewer authenticity?\"\n}"
+  }
+}

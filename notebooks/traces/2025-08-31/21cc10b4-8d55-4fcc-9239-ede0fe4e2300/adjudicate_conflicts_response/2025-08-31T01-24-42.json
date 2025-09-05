@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-31T01-24-42",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "21cc10b4-8d55-4fcc-9239-ede0fe4e2300",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [],\n  \"overall_confidence\": 0.2,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"The Airbnb_Analyzer agent encountered technical issues retrieving host details. Should we attempt manual verification of the profile at https://www.airbnb.com/users/show/698886341 or use alternative OSINT methods to gather this information?\"\n}"
+  }
+}

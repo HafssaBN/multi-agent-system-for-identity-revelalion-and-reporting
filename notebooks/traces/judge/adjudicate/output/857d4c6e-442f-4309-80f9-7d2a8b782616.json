@@ -1,0 +1,49 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Directly extracted from Airbnb's user profile data."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "URL is a direct link from Airbnb's user profile."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "URLs are explicitly provided from Airbnb's listing database."
+    },
+    {
+      "fact": "Average rating of 4.88 out of 5",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Derived from aggregated guest reviews on Airbnb, though subjective."
+    },
+    {
+      "fact": "Hassan is a French teacher from Tangier, Morocco",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Profile bio claims this, but unverified by external sources."
+    },
+    {
+      "fact": "Guests praised hospitality, responsiveness, and location",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.8,
+      "reason": "Based on review summaries; lacks direct quotes or independent corroboration."
+    },
+    {
+      "fact": "Reviewer names and locations (e.g., Omar from Unknown, Abdelkader from Vernouillet, France)",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.75,
+      "reason": "Extracted from Airbnb reviews, but some locations are unverified or missing."
+    }
+  ],
+  "overall_confidence": 0.88,
+  "should_pause_for_human": false,
+  "human_question": "Are there additional agents or data sources to cross-validate Hassan's identity and listing details?"
+}

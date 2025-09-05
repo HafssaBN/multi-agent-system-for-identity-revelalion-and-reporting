@@ -1,0 +1,36 @@
+{
+  "ts": "2025-09-04T10-44-32",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "65237362-5235-41fc-9142-2e8648724fc0",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name: Hassan",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "Name is directly provided and consistent with the listing context."
+      },
+      {
+        "fact": "Profile Picture URL",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.9,
+        "reason": "URL is specific and verifiable via reverse image search."
+      },
+      {
+        "fact": "Listing URLs",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "URLs are direct links to Airbnb listings, which are publicly accessible."
+      },
+      {
+        "fact": "Reviewer Names & Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.7,
+        "reason": "Some reviewers are listed as 'Unknown,' reducing overall credibility for this fact."
+      }
+    ],
+    "overall_confidence": 0.88,
+    "should_pause_for_human": false,
+    "human_question": "Are there additional agents or data sources to cross-verify these findings?"
+  }
+}

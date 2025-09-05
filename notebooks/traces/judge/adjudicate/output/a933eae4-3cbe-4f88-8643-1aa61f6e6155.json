@@ -1,0 +1,31 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Abdel",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Directly extracted from the profile bio with no conflicting data."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "URL is explicitly provided and appears valid, though unverified for accuracy."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Multiple URLs listed, but no cross-verification with external sources."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.8,
+      "reason": "Names and locations are reported from reviews but lack independent validation."
+    }
+  ],
+  "overall_confidence": 0.88,
+  "should_pause_for_human": false,
+  "human_question": "Are there additional agents or data sources to cross-verify these findings?"
+}

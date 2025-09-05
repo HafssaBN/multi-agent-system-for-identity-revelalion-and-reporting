@@ -1,0 +1,36 @@
+{
+  "ts": "2025-08-20T14-11-49",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "e1f4ce02-d2b0-42ad-8aca-3218403f91d9",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Abdel is an official guide in Marrakech with 5 years of experience.",
+        "winner": "Tripadvisor",
+        "confidence": 0.9,
+        "reason": "Tripadvisor is a trusted platform for verified reviews and professional service providers."
+      },
+      {
+        "fact": "Abdel Toughrai is a domain investor and web entrepreneur.",
+        "winner": "LinkedIn",
+        "confidence": 0.85,
+        "reason": "LinkedIn profiles are typically verified and provide detailed professional credentials."
+      },
+      {
+        "fact": "Abdel Houachmi plans to open two restaurants in Marrakech.",
+        "winner": "africabusinessplus.com",
+        "confidence": 0.75,
+        "reason": "News articles from business-focused outlets provide contextual validation for entrepreneurial ventures."
+      },
+      {
+        "fact": "Abdel is highly recommended as a guide in Marrakech.",
+        "winner": "Tripadvisor",
+        "confidence": 0.9,
+        "reason": "Tripadvisor user reviews and ratings are widely recognized for service quality validation."
+      }
+    ],
+    "overall_confidence": 0.8,
+    "should_pause_for_human": true,
+    "human_question": "Which Abdel (Toughrai, Houachmi, or unnamed guide) is associated with the provided profile image?"
+  }
+}

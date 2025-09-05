@@ -1,0 +1,35 @@
+{
+  "ts": "2025-08-20T13-50-58",
+  "kind": "image_candidates_found",
+  "run_id": "54061186-28e1-4aea-9041-f19750695fae",
+  "payload": {
+    "count": 61,
+    "candidates": [
+      {
+        "name": "Trafalgar Square - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Trafalgar_Square",
+        "why": "Visually similar match from reverse image/Lens search"
+      },
+      {
+        "name": "Trafalgar Square - Visit London",
+        "url": "https://www.visitlondon.com/things-to-do/place/283774-trafalgar-square",
+        "why": "Visually similar match from reverse image/Lens search"
+      },
+      {
+        "name": "File:Whitehall - geograph.org.uk - 396968.jpg - Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Whitehall_-_geograph.org.uk_-_396968.jpg",
+        "why": "Visually similar match from reverse image/Lens search"
+      },
+      {
+        "name": "The Old War Office Building, Whitehall | The Old War Office … | Flickr",
+        "url": "https://www.flickr.com/photos/panr/4846091726",
+        "why": "Visually similar match from reverse image/Lens search"
+      },
+      {
+        "name": "London: Harry Potter and Medieval Magic Tour | GetYourGuide",
+        "url": "https://www.getyourguide.com/london-l57/london-harry-potter-and-medieval-magic-tour-t876847/",
+        "why": "Visually similar match from reverse image/Lens search"
+      }
+    ]
+  }
+}

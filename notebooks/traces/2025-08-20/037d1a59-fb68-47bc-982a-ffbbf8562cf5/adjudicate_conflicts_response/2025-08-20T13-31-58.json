@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-20T13-31-58",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "037d1a59-fb68-47bc-982a-ffbbf8562cf5",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Abdel\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Directly extracted from the Airbnb profile, consistent with verified host data.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"URL is specific and actionable for verification via reverse image search.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"Multiple URLs provided, directly linked to the host's properties for cross-verification.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.85,\n      \"reason\": \"Names and locations (where available) align with typical Airbnb review patterns, though 'N/A' entries reduce confidence slightly.\"\n    }\n  ],\n  \"overall_confidence\": 0.9,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Verify the authenticity of the profile picture via reverse image search and confirm business registrations for 'Abdel entrepreneur Marrakech' to strengthen credibility.\"\n}"
+  }
+}

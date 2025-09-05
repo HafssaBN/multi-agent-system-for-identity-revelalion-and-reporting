@@ -1,0 +1,31 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Directly extracted from the profile summary with no conflicting data."
+    },
+    {
+      "fact": "Host Location: Tangier, Morocco",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Explicitly stated in the profile summary with no ambiguity."
+    },
+    {
+      "fact": "Listing Description: Well-maintained apartment with excellent reviews",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Derived from guest reviews and property description, but lacks third-party verification."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Directly linked from the Airbnb profile with no conflicting sources."
+    }
+  ],
+  "overall_confidence": 0.9875,
+  "should_pause_for_human": false,
+  "human_question": "No conflicting agents to compare. Proceed with reverse image search and web investigations as suggested."
+}

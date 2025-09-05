@@ -1,0 +1,36 @@
+{
+  "ts": "2025-09-05T15-06-42",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "be02ed14-e5a6-416e-9dec-d49a864fe12a",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name: Hassan",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "Directly extracted from Airbnb profile with supporting context about his profession and location."
+      },
+      {
+        "fact": "Profile Picture URL",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.9,
+        "reason": "URL is specific and verifiable via reverse image search, though no cross-agent validation exists."
+      },
+      {
+        "fact": "Listing URLs",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.92,
+        "reason": "Multiple URLs provided with direct links to Airbnb listings, consistent with the host's profile."
+      },
+      {
+        "fact": "Reviewer Names & Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.85,
+        "reason": "Names and locations are plausible but lack independent corroboration from another agent."
+      }
+    ],
+    "overall_confidence": 0.9,
+    "should_pause_for_human": false,
+    "human_question": "No conflicting agents provided for comparison. All findings derive from a single source (Airbnb_Analyzer)."
+  }
+}

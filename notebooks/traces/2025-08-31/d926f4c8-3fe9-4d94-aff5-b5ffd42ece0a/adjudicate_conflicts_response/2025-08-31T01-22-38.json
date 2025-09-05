@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-31T01-22-38",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "d926f4c8-3fe9-4d94-aff5-b5ffd42ece0a",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Alexandra\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Name is explicitly provided with contextual details about location and listings.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"URL is specific and actionable for reverse image search verification.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.85,\n      \"reason\": \"URLs are direct links to verified Airbnb listings.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.8,\n      \"reason\": \"Names and locations are plausible but lack independent corroboration.\"\n    }\n  ],\n  \"overall_confidence\": 0.88,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Would you like to proceed with the suggested follow-up actions (e.g., reverse image search, web search)?\"\n}"
+  }
+}

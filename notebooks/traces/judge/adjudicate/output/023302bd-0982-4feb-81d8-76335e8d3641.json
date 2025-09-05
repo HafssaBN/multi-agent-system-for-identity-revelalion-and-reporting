@@ -1,0 +1,43 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Directly extracted from the Airbnb profile bio, which is the primary source for host identity."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Provided as a direct link from the Airbnb profile, though no reverse image search results are available for verification."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Specific Airbnb room links are directly tied to the host's profile and are actionable for further investigation."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.8,
+      "reason": "Extracted from guest reviews on the same platform, though some locations are unspecified (N/A)."
+    },
+    {
+      "fact": "Multiple Yahya candidates with engineering backgrounds",
+      "winner": "open_deep_research",
+      "confidence": 0.7,
+      "reason": "Identified through external sources (LinkedIn, ResearchGate, YouTube), but lacks direct verification against the Airbnb profile."
+    },
+    {
+      "fact": "No reliable match yet",
+      "winner": "open_deep_research",
+      "confidence": 0.65,
+      "reason": "Concludes based on cross-referencing external profiles with the original query, highlighting ambiguity."
+    }
+  ],
+  "overall_confidence": 0.75,
+  "should_pause_for_human": true,
+  "human_question": "Can you confirm if the Airbnb host 'Yahya' matches any of the external profiles (e.g., LinkedIn, ResearchGate) or provide additional details like his full name, university, or specific projects to narrow the search?"
+}

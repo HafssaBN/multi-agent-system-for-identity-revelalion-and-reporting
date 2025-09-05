@@ -1,0 +1,42 @@
+{
+  "ts": "2025-09-04T10-58-39",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "1927a716-15fd-4fc3-a6e0-bb465025e471",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name: Hassan",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "Name is directly extracted from the Airbnb profile URL and listed in the summary."
+      },
+      {
+        "fact": "Profile Picture URL",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.9,
+        "reason": "URL is verifiable via reverse image search and matches the profile description."
+      },
+      {
+        "fact": "Listing Location: Tangier, Morocco",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "Location is explicitly stated in the summary and corroborated by the listing URL."
+      },
+      {
+        "fact": "8 Reviews with 4.88 Average Rating",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.9,
+        "reason": "Review count and rating are standard metrics displayed on Airbnb profiles."
+      },
+      {
+        "fact": "Reviewer Names & Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.85,
+        "reason": "Names and locations are pulled from public review data, though some may be incomplete (e.g., 'Unknown')."
+      }
+    ],
+    "overall_confidence": 0.92,
+    "should_pause_for_human": false,
+    "human_question": "Would you like to proceed with the suggested follow-up steps (e.g., reverse image search, web search for 'Hassan French teacher Tangier')?"
+  }
+}

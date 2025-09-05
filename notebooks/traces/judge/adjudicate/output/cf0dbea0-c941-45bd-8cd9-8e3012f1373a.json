@@ -1,0 +1,19 @@
+{
+  "verdicts": [
+    {
+      "fact": "Hassan is a French teacher in Tangier",
+      "winner": "Hassan Belhaj",
+      "confidence": 0.3,
+      "reason": "Hassan Belhaj's LinkedIn profile mentions his role at the English Language Centre of Tangier, which is tangentially related to language education but does not explicitly confirm French teaching. Hassan Khedda is an English teacher, which is a different subject. Neither profile directly states they teach French."
+    },
+    {
+      "fact": "Hassan is based in Tangier",
+      "winner": "Hassan Belhaj",
+      "confidence": 0.6,
+      "reason": "Both Hassan Belhaj and Hassan Khedda are explicitly associated with Tangier in their professional profiles. However, Hassan Belhaj's institutional affiliation (English Language Centre of Tangier) provides stronger contextual relevance to the location."
+    }
+  ],
+  "overall_confidence": 0.45,
+  "should_pause_for_human": true,
+  "human_question": "Can you verify if Hassan Belhaj or Hassan Khedda has any explicit mention of teaching French in their LinkedIn profiles or other public records? The current evidence does not confirm their language specialization."
+}

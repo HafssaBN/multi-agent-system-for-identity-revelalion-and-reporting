@@ -1,0 +1,6 @@
+{
+  "verdicts": [],
+  "overall_confidence": 0.2,
+  "should_pause_for_human": true,
+  "human_question": "The Airbnb_Analyzer agent encountered technical issues retrieving host details. Should we attempt manual verification of the profile at https://www.airbnb.com/users/show/698886341 or use alternative OSINT methods to gather this information?"
+}

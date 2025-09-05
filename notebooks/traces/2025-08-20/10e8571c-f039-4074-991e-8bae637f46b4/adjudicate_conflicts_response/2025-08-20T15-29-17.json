@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-20T15-29-17",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "10e8571c-f039-4074-991e-8bae637f46b4",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Abdel\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Directly extracted from profile bio with no conflicting data from open_deep_research.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"Provided a specific URL, while open_deep_research acknowledged inability to execute reverse image search.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.92,\n      \"reason\": \"Enumerated 10 verified listing URLs, whereas open_deep_research found no actionable data.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.88,\n      \"reason\": \"Included specific guest names and locations, while open_deep_research reported no results.\"\n    }\n  ],\n  \"overall_confidence\": 0.91,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Perform a reverse image search on the provided profile picture URL to verify cross-platform identity matches.\"\n}"
+  }
+}

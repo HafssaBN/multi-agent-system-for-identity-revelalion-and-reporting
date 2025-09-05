@@ -1,0 +1,20 @@
+{
+  "ts": "2025-09-05T10-45-04",
+  "kind": "image_candidates_found",
+  "run_id": "af3733e9-7ecb-4e13-baa4-0f7be5e5be5f",
+  "payload": {
+    "count": 2,
+    "candidates": [
+      {
+        "name": "ERG (Eastern Research Group Inc.)",
+        "url": "https://www.erg.com/",
+        "why": "Visually similar match from reverse image/Lens search"
+      },
+      {
+        "name": "Emergency Response Guidebook (ERG) | PHMSA",
+        "url": "https://www.phmsa.dot.gov/training/hazmat/erg/emergency-response-guidebook-erg",
+        "why": "Visually similar match from reverse image/Lens search"
+      }
+    ]
+  }
+}

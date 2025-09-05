@@ -1,0 +1,36 @@
+{
+  "ts": "2025-09-04T10-49-42",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "37a1f4e0-da05-4e67-a7d7-7b1ab7bc1003",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name: Hassan",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "Directly extracted from the profile summary with no conflicting data."
+      },
+      {
+        "fact": "Host Location: Tangier, Morocco",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.9,
+        "reason": "Mentioned in the summary but lacks independent verification."
+      },
+      {
+        "fact": "Listing URL: https://www.airbnb.com/rooms/1464489937221305511",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.98,
+        "reason": "URL is specific and appears valid, though unverified."
+      },
+      {
+        "fact": "Reviewer Names & Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.75,
+        "reason": "Names and locations are listed but lack cross-referenced sources."
+      }
+    ],
+    "overall_confidence": 0.86,
+    "should_pause_for_human": true,
+    "human_question": "No comparative agent data provided. Please submit findings from a second agent for credibility assessment."
+  }
+}

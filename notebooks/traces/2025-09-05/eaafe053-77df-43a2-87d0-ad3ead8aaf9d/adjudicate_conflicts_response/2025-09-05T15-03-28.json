@@ -1,0 +1,8 @@
+{
+  "ts": "2025-09-05T15-03-28",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "eaafe053-77df-43a2-87d0-ad3ead8aaf9d",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information, and it is directly sourced from the Airbnb profile.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The URL is explicitly provided and verifiable via Airbnb's public profile.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The URLs are directly linked to the host's Airbnb listing and are publicly accessible.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"Names and locations are derived from public reviews, but some entries are marked as 'Unknown' due to privacy settings.\"\n    },\n    {\n      \"fact\": \"Pictures of the Listing\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The image URLs are directly sourced from the Airbnb listing and are publicly available.\"\n    }\n  ],\n  \"overall_confidence\": 1.0,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"No additional agents provided findings for comparison. Are there other agents to evaluate?\"\n}"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Directly extracted from Airbnb profile with no conflicting claims."
+    },
+    {
+      "fact": "Location (Tangier, Morocco)",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Confirmed by listing location and profile metadata."
+    },
+    {
+      "fact": "Listing Title and URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.98,
+      "reason": "Provided as direct links from the Airbnb platform."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.98,
+      "reason": "Directly linked from the host's profile page."
+    },
+    {
+      "fact": "Reviewer Names and Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.92,
+      "reason": "Extracted from Airbnb reviews with partial anonymity (e.g., 'Unknown' locations)."
+    },
+    {
+      "fact": "Potential Real-World Identity",
+      "winner": "open_deep_research",
+      "confidence": 0.65,
+      "reason": "Identified multiple candidates (Hassan Zizy, Hassan Belhaj) with contextual relevance to Tangier and education, but no direct verification."
+    }
+  ],
+  "overall_confidence": 0.85,
+  "should_pause_for_human": true,
+  "human_question": "Verify if any of the open_deep_research candidates (e.g., Hassan Zizy or Hassan Belhaj) match the Airbnb host Hassan through cross-referencing profile details, locations, or professional roles."
+}

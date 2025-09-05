@@ -1,0 +1,31 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this information."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this information."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this information."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this information."
+    }
+  ],
+  "overall_confidence": 1.0,
+  "should_pause_for_human": false,
+  "human_question": "No conflicting agents to compare. All findings are from a single source. Would you like to request additional agent analysis for cross-verification?"
+}

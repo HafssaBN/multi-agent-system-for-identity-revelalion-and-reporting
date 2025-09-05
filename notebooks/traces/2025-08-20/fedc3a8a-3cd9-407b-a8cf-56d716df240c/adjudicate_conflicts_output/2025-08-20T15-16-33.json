@@ -1,0 +1,36 @@
+{
+  "ts": "2025-08-20T15-16-33",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "fedc3a8a-3cd9-407b-a8cf-56d716df240c",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name: Abdel",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Only one agent provided this information with no conflicting data."
+      },
+      {
+        "fact": "Profile Picture URL",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Only one agent provided this information with no conflicting data."
+      },
+      {
+        "fact": "Listing URLs",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Only one agent provided this information with no conflicting data."
+      },
+      {
+        "fact": "Reviewer Names & Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Only one agent provided this information with no conflicting data."
+      }
+    ],
+    "overall_confidence": 1.0,
+    "should_pause_for_human": false,
+    "human_question": "No conflicting data detected. Proceed with the provided findings or request additional verification?"
+  }
+}

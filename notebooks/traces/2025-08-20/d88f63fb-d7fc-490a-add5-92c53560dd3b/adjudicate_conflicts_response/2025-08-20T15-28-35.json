@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-20T15-28-35",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "d88f63fb-d7fc-490a-add5-92c53560dd3b",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Professional background of Abdel from Marrakech\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.2,\n      \"reason\": \"No results found due to search timeout; no alternative data sources provided.\"\n    },\n    {\n      \"fact\": \"Online presence of Abdel from Marrakech\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.1,\n      \"reason\": \"No web search or image-based findings reported; search infrastructure failed.\"\n    }\n  ],\n  \"overall_confidence\": 0.15,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Should we perform a reverse image search using Google Lens or another tool to identify Abdel's online presence?\"\n}"
+  }
+}

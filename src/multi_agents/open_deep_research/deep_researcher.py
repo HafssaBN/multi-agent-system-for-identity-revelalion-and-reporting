@@ -9,7 +9,7 @@ import re
 from dotenv import load_dotenv
 from pydantic import BaseModel, SecretStr
 from typing_extensions import TypedDict
-
+import json
 from ..common.judge import adjudicate_conflicts , judge_candidates
 from ..constants.judge_constants import JudgeConstants
 from langchain_openai import ChatOpenAI
@@ -77,6 +77,13 @@ def keep_first_value(current_value: Optional[Any], new_value: Any) -> Any:
 def today_str() -> str:
     return f"{datetime.now():%a %b %d, %Y}"
 
+
+def _safe_json_loads(text):
+                    try:
+                        return json.loads(text)
+                    except json.JSONDecodeError:
+                        logger.warning(f"Failed to decode JSON from LLM extractor. Raw text: '{text}'")
+                        return []
 def get_api_key_for_model(_: str, __: RunnableConfig) -> str:
     key = os.getenv("OPENROUTER_API_KEY")
     if not key:
@@ -786,9 +793,8 @@ async def supervisor_tools(state: DeepResearchState, config: RunnableConfig) -> 
             )
             try:
                 ext = await extractor.ainvoke([HumanMessage(content=extraction_prompt)])
-                raw = getattr(ext, "content", "[]")
-                import json
-                extracted = json.loads(raw if isinstance(raw, str) else str(raw))
+            
+                extracted = _safe_json_loads(raw if isinstance(raw, str) else str(raw))
                 extra_cands: List[Dict[str, Any]] = []
                 for e in extracted or []:
                     extra_cands.append({
@@ -1008,19 +1014,15 @@ async def supervisor_tools(state: DeepResearchState, config: RunnableConfig) -> 
 
 
 
-
+# In deep_researcher.py
 
 def should_continue_supervisor(state: DeepResearchState) -> Union[str, object]:
+    # *** THIS IS THE CRITICAL ADDITION ***
     if state.get("awaiting_disambiguation"):
         logger.info("⛔ Awaiting human disambiguation on candidates; pausing graph.")
         return "__end__"
 
-    # NEW: stop immediately if supervisor_tools set stop_now
-    if state.get("stop_now"):
-        logger.info("🛑 Early stop requested by supervisor_tools.")
-        return "__end__"
-
-
+    # The rest of the function remains the same
     iters = state.get("supervisor_iterations", 0)
     cfg = Configuration.from_runnable_config()
     max_iters = getattr(cfg, "max_researcher_iterations", MAX_RESEARCHER_ITERATIONS)
@@ -1037,8 +1039,13 @@ def should_continue_supervisor(state: DeepResearchState) -> Union[str, object]:
     if not calls:
         logger.info("No tool calls; stopping.")
         return "__end__"
-    return "supervisor_tools"
+        
+    # NEW: Check for an explicit stop signal
+    if any(getattr(c, "name", "") == "research_complete" for c in calls):
+        logger.info("✅ `research_complete` tool called. Ending.")
+        return "__end__"
 
+    return "supervisor_tools"
 
 def _route_entry(state: DeepResearchState) -> str:
     return "supervisor" if state.get("research_brief") else "write_research_brief"

@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-31T01-27-52",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "7eb4f4e0-38dd-46e0-b7b4-95289bbff130",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host ID and Profile URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"The agent explicitly provided the host ID (698886341) and profile URL (https://www.airbnb.com/users/show/698886341), which are verifiable and directly address the research brief.\"\n    },\n    {\n      \"fact\": \"Technical Limitation\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.8,\n      \"reason\": \"The agent transparently explained the SQLite threading error as the root cause for failing to extract additional host details, demonstrating credibility in acknowledging limitations.\"\n    }\n  ],\n  \"overall_confidence\": 0.5,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Should we prioritize resolving the SQLite threading error or explore alternative tools/methods to extract the host's identity from the provided URL?\"\n}"
+  }
+}

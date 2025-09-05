@@ -1,0 +1,18 @@
+{
+  "ts": "2025-09-05T10-46-32",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "dd029a0a-da77-4fbc-b3b5-ff74053e4bd5",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Hassan's professional online identity as a French teacher in Tangier",
+        "winner": "Agent",
+        "confidence": 0.2,
+        "reason": "No results found in direct search or image analysis; agent concluded no reliable match and recommended human input for query refinement."
+      }
+    ],
+    "overall_confidence": 0.2,
+    "should_pause_for_human": true,
+    "human_question": "Refine the search query to include additional keywords or expand scope beyond Airbnb to identify Hassan's professional identity."
+  }
+}

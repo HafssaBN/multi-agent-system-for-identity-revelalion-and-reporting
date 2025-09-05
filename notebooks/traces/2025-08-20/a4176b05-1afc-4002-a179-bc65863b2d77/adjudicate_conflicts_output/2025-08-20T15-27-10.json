@@ -1,0 +1,11 @@
+{
+  "ts": "2025-08-20T15-27-10",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "a4176b05-1afc-4002-a179-bc65863b2d77",
+  "payload": {
+    "verdicts": [],
+    "overall_confidence": 0,
+    "should_pause_for_human": true,
+    "human_question": "Only one agent's findings were provided. Are there additional agents to compare?"
+  }
+}

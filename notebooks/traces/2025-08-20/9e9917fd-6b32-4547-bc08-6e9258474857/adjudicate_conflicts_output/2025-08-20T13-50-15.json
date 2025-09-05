@@ -1,0 +1,36 @@
+{
+  "ts": "2025-08-20T13-50-15",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "9e9917fd-6b32-4547-bc08-6e9258474857",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name: Abdel",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "Name is directly extracted from the Airbnb profile and corroborated by verified status."
+      },
+      {
+        "fact": "Profile Picture URL",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.98,
+        "reason": "URL is a direct link from Airbnb's official domain, indicating authenticity."
+      },
+      {
+        "fact": "Listing URLs",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.97,
+        "reason": "URLs are valid Airbnb property links, suggesting accurate data extraction."
+      },
+      {
+        "fact": "Reviewer Names & Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.85,
+        "reason": "Names and locations align with typical Airbnb review patterns, though 'N/A' entries may indicate incomplete data."
+      }
+    ],
+    "overall_confidence": 0.93,
+    "should_pause_for_human": false,
+    "human_question": "Are there additional steps to verify the authenticity of the profile picture or business claims?"
+  }
+}

@@ -5,10 +5,24 @@ from urllib.parse import unquote
 load_dotenv()
 
 
+
+_PACKAGE_DIR = os.path.dirname(os.path.dirname(__file__))
+# database folder inside it
+_DATABASE_DIR = os.path.join(_PACKAGE_DIR, "database")
+
 class Constants:
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
     MODEL_FOR_WORKER = "llama-3.3-70b-versatile"
     MODEL = "llama-3.3-70b-versatile"
+    ABS_DB = r"C:\Users\hafss\OneDrive\Desktop\airbnbscrapper\airbnb_host\database\Airbnb.db"
+    if os.path.exists(ABS_DB):
+        CONFIG_DB_FILE = ABS_DB
+    else:
+        # fallback to package-relative
+        _PACKAGE_DIR = os.path.dirname(os.path.dirname(__file__))
+        _DATABASE_DIR = os.path.join(_PACKAGE_DIR, "database")
+        CONFIG_DB_FILE = os.path.join(_DATABASE_DIR, "Airbnb.db")
+
     
     # Tool names
     TOOLS = {
@@ -44,10 +58,10 @@ class Constants:
 
     # --- MoA: Define the Planner and Aggregator Models ---
     # The "Manager" that makes the high-level plan. Needs strong reasoning.
-    PLANNER_MODEL = "mistralai/mixtral-8x22b-instruct" 
+    PLANNER_MODEL =  "meta-llama/llama-3.3-70b-instruct"
     
     # The "Editor" that summarizes and refines the work of the proposers.
-    AGGREGATOR_MODEL = "qwen/qwen-2-72b-instruct"
+    AGGREGATOR_MODEL = "qwen/qwen3-30b-a3b-instruct-2507"
 
 
     # Strong creative writing model for the final report synthesis.

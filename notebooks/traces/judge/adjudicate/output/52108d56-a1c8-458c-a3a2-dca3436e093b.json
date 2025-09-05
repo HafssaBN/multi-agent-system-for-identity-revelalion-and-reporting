@@ -1,0 +1,37 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Abdel",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this fact with no conflicting claims."
+    },
+    {
+      "fact": "Profile Picture URL: https://a0.muscache.com/im/pictures/user/User/original/213a678f-2d3c-4b11-886e-df873b318aa4.jpeg?im_w=720",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this fact with no conflicting claims."
+    },
+    {
+      "fact": "Listing URLs (10 entries)",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this fact with no conflicting claims."
+    },
+    {
+      "fact": "Reviewer Names & Locations (10 entries)",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this fact with no conflicting claims."
+    },
+    {
+      "fact": "Follow-up Suggestions (reverse image search, web search, listing investigation)",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 1.0,
+      "reason": "Only one agent provided this fact with no conflicting claims."
+    }
+  ],
+  "overall_confidence": 1.0,
+  "should_pause_for_human": false,
+  "human_question": "No conflicting data detected. Would you like to proceed with the provided findings or request additional verification steps?"
+}

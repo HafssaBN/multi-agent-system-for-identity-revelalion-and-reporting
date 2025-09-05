@@ -1,0 +1,11 @@
+{
+  "ts": "2025-09-04T10-47-37",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "0a472ece-d06c-4ee8-bd67-d6326f4e115e",
+  "payload": {
+    "verdicts": [],
+    "overall_confidence": 0.2,
+    "should_pause_for_human": true,
+    "human_question": "No reliable match found for Hassan. Should we refine the search query (e.g., add 'language teacher' or 'Tangier Morocco') or prioritize the reverse image search to identify the profile image source?"
+  }
+}

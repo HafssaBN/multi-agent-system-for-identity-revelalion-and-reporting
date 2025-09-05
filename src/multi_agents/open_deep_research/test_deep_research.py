@@ -177,14 +177,11 @@ def show_judge_xai(state: DeepResearchState) -> None:
         if isinstance(m, ToolMessage) and getattr(m, "name", "") == "llm_judge":
             found_llm_judge = True
             print("\n[llm_judge ToolMessage]")
-            # Contains: winner_index, confidence, should_pause_for_human, ranking (top 5),
-            # router chosen models, bias diagnostics, etc.
             print(m.content)
 
     if not found_llm_judge:
         print("No llm_judge ToolMessage found in planner_messages (routing/diagnostics might be disabled or judge errored).")
 
-    # Also show compact judge lines that were added to notes
     notes = state.get("notes", []) or []
     judge_notes = [n for n in notes if n.startswith("[judge]") or "LLM Judge decision" in n]
     if judge_notes:
@@ -194,6 +191,10 @@ def show_judge_xai(state: DeepResearchState) -> None:
     else:
         print("\nNo judge-related lines found in notes.")
 
+# *** NEW HELPER FUNCTION FOR ASYNC INPUT ***
+def get_user_input(prompt: str) -> str:
+    """Wrapper for the blocking input() function."""
+    return input(prompt)
 
 # ----------------------------
 # Main
@@ -232,42 +233,65 @@ async def main() -> None:
         "candidates": [],
         "awaiting_disambiguation": False,
         "selected_candidate": None,
-        # the rest of the keys are filled inside the agent
+        "rejected_urls": [],
+        "image_probe_done": False,
     }
 
-    config = {
-        "configurable": {
-            # optional runtime flags
-        }
-    }
+    config = {"configurable": {}}
 
-    print("--- [3] Invoking the deep_researcher agent... ---\n")
+    print("--- [3] Streaming the deep_researcher agent... ---\n")
     try:
-        state: DeepResearchState = await deep_researcher.ainvoke(initial_state, config)
+        # === REVISED LOGIC: Use astream to handle intermediate pauses ===
+        state = initial_state
+        
+        # --- First Run ---
+        async for update in deep_researcher.astream(state, config):
+            # The output of astream is a dictionary where keys are node names
+            # and values are the updates to the state. We take the last one.
+            latest_state = list(update.values())[0]
+            
+            # Check if the agent has paused for human input
+            if latest_state.get("awaiting_disambiguation"):
+                print("--- [3a] Agent paused for human input ---")
+                state = latest_state  # Capture the paused state
+                break  # Exit the stream to wait for the user
+            else:
+                state = latest_state # Continue updating state until pause or end
 
-        # Show candidates (useful to compare with winner_index in XAI)
-        show_candidates_for_context(state)
-
-        # Human-in-the-loop selection if agent paused
+        # --- Human-in-the-Loop (HITL) Interaction ---
         if state.get("awaiting_disambiguation") and state.get("candidates"):
-            print("\n⚠️  HITL pause — pick a candidate by number (or -1 = none):")
-            for i, c in enumerate(state["candidates"]):
-                print(f"  [{i}] {c.get('name')} — {c.get('url')}\n      why: {c.get('why')}")
-            try:
-                raw = input("\nYour choice: ").strip()
-                choice = int(raw) if raw != "" else -1
-            except Exception:
-                choice = -1
-            state = await continue_research(state, choice)
+            print("\n" + "="*40)
+            print("⚠️  AGENT PAUSED: Awaiting human disambiguation.")
+            print("Please select the best candidate to continue the investigation.")
+            print("="*40 + "\n")
 
+            candidates = state.get("candidates", [])
+            for i, c in enumerate(candidates):
+                print(f"  [{i}] {c.get('name')} — {c.get('url')}\n      why: {c.get('why')}\n")
+            
+            try:
+                prompt_text = "Your choice (enter a number, or -1 for none): "
+                raw_choice = await asyncio.to_thread(get_user_input, prompt_text)
+                choice_index = int(raw_choice.strip()) if raw_choice.strip() else -1
+            except (ValueError, IndexError):
+                print("Invalid choice. Defaulting to 'none'.")
+                choice_index = -1
+            
+            # --- Resume the agent with the user's choice ---
+            print(f"\n--- [3b] Resuming agent with selection: {choice_index} ---\n")
+            
+            # Create the resumed state and stream again
+            resumed_state = await continue_research(state, choice_index, config)
+            async for update in deep_researcher.astream(resumed_state, config):
+                state = list(update.values())[0] # Update state until the final result
+
+        # --- Final Output Processing ---
         print("\n" + "=" * 60)
         print("--- [4] AGENT EXECUTION FINISHED ---")
         print("=" * 60 + "\n")
 
-        # ---- XAI / SMoA inspection (judge output, router models, bias diagnostics)
+        # Now, process the final state regardless of how we got here
         show_judge_xai(state)
-
-        # Final notes (agent summaries)
         notes = state.get("notes", [])
         print("\n--- FINAL RESEARCH NOTES (Agent Summaries) ---")
         if not notes:
@@ -276,11 +300,9 @@ async def main() -> None:
             for i, note in enumerate(notes, 1):
                 print(f"\n[Note {i}]\n{note}")
 
-        # Manager-friendly wrap-ups
         summarize_image_search_for_manager(notes)
         process_and_display_evidence(notes)
 
-        # Test verification
         print("\n\n--- TEST VERIFICATION ---")
         print(f"notes count: {len(notes)}")
         if notes:
@@ -292,7 +314,6 @@ async def main() -> None:
         print(f"\n❌ ERROR: Agent execution failed: {e}")
         import traceback
         traceback.print_exc()
-
 
 if __name__ == "__main__":
     asyncio.run(main())

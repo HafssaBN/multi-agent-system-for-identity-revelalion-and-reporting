@@ -1,0 +1,37 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host's name is Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Directly extracted from Airbnb profile with supporting review context."
+    },
+    {
+      "fact": "Host's profession is a French teacher",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Explicitly stated in profile summary with no conflicting evidence."
+    },
+    {
+      "fact": "Profile picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.98,
+      "reason": "URL is verifiable via direct access to Airbnb profile."
+    },
+    {
+      "fact": "Listing URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.97,
+      "reason": "Valid Airbnb room URL with active listing status."
+    },
+    {
+      "fact": "Image search results",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Open_deep_research results are irrelevant Wikipedia pages in Arabic, not social media profiles."
+    }
+  ],
+  "overall_confidence": 0.92,
+  "should_pause_for_human": false,
+  "human_question": "Should we prioritize verifying the profile picture's uniqueness via reverse image search or investigate the listing URL for co-host information first?"
+}

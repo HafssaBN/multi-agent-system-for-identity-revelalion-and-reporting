@@ -1,0 +1,36 @@
+{
+  "ts": "2025-09-04T10-48-32",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "2e543a54-999c-4cb0-ae86-595e6ed98e27",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name: Hassan",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Only one agent provided this information."
+      },
+      {
+        "fact": "Profile Picture URL",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Only one agent provided this information."
+      },
+      {
+        "fact": "Listing URLs",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Only one agent provided this information."
+      },
+      {
+        "fact": "Reviewer Names & Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Only one agent provided this information."
+      }
+    ],
+    "overall_confidence": 1.0,
+    "should_pause_for_human": false,
+    "human_question": "No conflicting agents to compare. All findings are from a single source. Would you like to request additional agent analysis for cross-verification?"
+  }
+}

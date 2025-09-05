@@ -1,0 +1,25 @@
+{
+  "verdicts": [
+    {
+      "fact": "Initial Google search for 'Abdel entrepreneur Marrakeh' timed out",
+      "winner": "direct_search_summary",
+      "confidence": 0.2,
+      "reason": "The search attempt failed due to a timeout, indicating limited credibility in the findings. No alternative search methods were executed."
+    },
+    {
+      "fact": "Reverse image search not conducted",
+      "winner": "direct_search_summary",
+      "confidence": 0.1,
+      "reason": "The agent explicitly states no reverse image search was performed, leaving no evidence to assess credibility for this fact."
+    },
+    {
+      "fact": "Recommendation to perform reverse image search and detailed web search",
+      "winner": "direct_search_summary",
+      "confidence": 0.8,
+      "reason": "The agent acknowledges the need for further investigation and provides actionable next steps, which is a credible and transparent conclusion."
+    }
+  ],
+  "overall_confidence": 0.37,
+  "should_pause_for_human": true,
+  "human_question": "Please perform a reverse image search on the provided URL and attempt a more detailed web search for 'Abdel entrepreneur Marrakech' using additional keywords or context."
+}

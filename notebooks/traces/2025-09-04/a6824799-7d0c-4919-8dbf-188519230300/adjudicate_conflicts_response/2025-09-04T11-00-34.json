@@ -1,0 +1,8 @@
+{
+  "ts": "2025-09-04T11-00-34",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "a6824799-7d0c-4919-8dbf-188519230300",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The agent directly extracted the host's name from the profile URL and provided corroborating details like the listing location and reviews.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The URL was explicitly provided by the agent, and there is no conflicting information to question its validity.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The agent provided a direct link to the listing, which aligns with the host's profile and review data.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.8,\n      \"reason\": \"While the agent listed reviewer names and locations, some entries are marked as 'Unknown,' reducing confidence in the completeness of this data.\"\n    }\n  ],\n  \"overall_confidence\": 0.95,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Are there additional agents or data sources to cross-verify the reviewers’ identities or the host’s background?\"\n}"
+  }
+}

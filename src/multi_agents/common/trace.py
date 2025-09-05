@@ -6,6 +6,7 @@ import os
 import uuid
 from datetime import datetime
 from typing import Any, Dict, Optional
+from .nosql_store import MongoTraceSink
 
 # ---------- Config ----------
 TRACES_DIR = os.getenv("TRACES_DIR", "./traces")
@@ -35,7 +36,7 @@ def _sanitize_filename(name: str) -> str:
 
 def trace_event(kind: str, payload: Optional[Dict[str, Any]] = None, run_id: Optional[str] = None) -> None:
     """
-    Save each trace event as a pretty JSON file.
+    Save each trace event as a pretty JSON file and send it to MongoDB.
 
     Directory structure:
     traces/<date>/<run_id>/<kind>/<timestamp>.json
@@ -55,11 +56,13 @@ def trace_event(kind: str, payload: Optional[Dict[str, Any]] = None, run_id: Opt
         "payload": payload,
     }
 
-    # Folder structure
+    # --- Write to local file (existing functionality) ---
     base_dir = os.path.join(TRACES_DIR, today, _sanitize_filename(rid), _sanitize_filename(kind))
     _ensure_dir(base_dir)
-
-    # Write one file per event
     file_path = os.path.join(base_dir, f"{ts}.json")
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(event, f, ensure_ascii=False, indent=2)
+
+    # --- NEW: Send the event to MongoDB ---
+    # This will send every event logged by any agent to your database.
+    MongoTraceSink.save(kind, event)

@@ -1,0 +1,31 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Alexandra",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Name is explicitly provided with contextual details about location and listings."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "URL is specific and actionable for reverse image search verification."
+    },
+    {
+      "fact": "Listing URLs",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "URLs are direct links to verified Airbnb listings."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.8,
+      "reason": "Names and locations are plausible but lack independent corroboration."
+    }
+  ],
+  "overall_confidence": 0.88,
+  "should_pause_for_human": false,
+  "human_question": "Would you like to proceed with the suggested follow-up actions (e.g., reverse image search, web search)?"
+}

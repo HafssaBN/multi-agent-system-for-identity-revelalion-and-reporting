@@ -1,0 +1,48 @@
+{
+  "ts": "2025-09-04T10-48-05",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "95a9a93a-0470-49bd-8916-94436805c27f",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host Name: Hassan",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Directly provided by the agent with no conflicting data."
+      },
+      {
+        "fact": "Host Profession: French teacher",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Explicitly stated in the summary with no ambiguity."
+      },
+      {
+        "fact": "Host Location: Tangier, Morocco",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Clearly specified in the summary."
+      },
+      {
+        "fact": "Listing Description: Well-maintained and clean apartment with excellent reviews",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Consistently described across the summary and actionable intelligence."
+      },
+      {
+        "fact": "Profile Picture URL",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 1.0,
+        "reason": "Directly linked to Airbnb's official domain, indicating authenticity."
+      },
+      {
+        "fact": "Reviewer Names and Locations",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.8,
+        "reason": "Names and locations are listed but lack verification (e.g., 'Unknown' entries)."
+      }
+    ],
+    "overall_confidence": 0.95,
+    "should_pause_for_human": false,
+    "human_question": "Are there additional agents or data sources to cross-verify the reviewers' identities and the host's social media presence?"
+  }
+}

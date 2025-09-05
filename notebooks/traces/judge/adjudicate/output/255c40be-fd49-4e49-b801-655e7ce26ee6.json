@@ -1,0 +1,43 @@
+{
+  "verdicts": [
+    {
+      "fact": "Host Name: Hassan",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.95,
+      "reason": "Name is directly extracted from the Airbnb profile URL and listed in the summary."
+    },
+    {
+      "fact": "Location: Tangier, Morocco",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.9,
+      "reason": "Location is a standard public detail on Airbnb profiles and aligns with the listing's context."
+    },
+    {
+      "fact": "Average Rating: 4.88/5",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.85,
+      "reason": "Ratings are publicly visible on Airbnb, though exact decimal precision may require direct verification."
+    },
+    {
+      "fact": "Profile Picture URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.98,
+      "reason": "URL is explicitly provided and can be validated by visiting the link."
+    },
+    {
+      "fact": "Listing URL",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.97,
+      "reason": "URL is directly linked and verifiable via Airbnb's platform."
+    },
+    {
+      "fact": "Reviewer Names & Locations",
+      "winner": "Airbnb_Analyzer",
+      "confidence": 0.75,
+      "reason": "Partial data (e.g., 'Unknown' locations) reduces confidence, but some names/locations are plausible based on Airbnb's public review system."
+    }
+  ],
+  "overall_confidence": 0.88,
+  "should_pause_for_human": true,
+  "human_question": "Verify the accuracy of the average rating (4.88) and confirm the validity of the provided URLs (profile picture and listing)."
+}

@@ -1,0 +1,8 @@
+{
+  "ts": "2025-09-01T23-26-18",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "6318d2f8-eb8c-46bb-8854-0d0e0769b052",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"No results from google_maps_search\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.9,\n      \"reason\": \"The agent explicitly states no results were found, indicating a reliable conclusion based on direct search attempts.\"\n    },\n    {\n      \"fact\": \"No reverse image search results\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.85,\n      \"reason\": \"The agent confirms no useful results from Lens, a trusted reverse image tool, supporting the credibility of this finding.\"\n    },\n    {\n      \"fact\": \"No web search candidates found\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.8,\n      \"reason\": \"The agent systematically reports no candidates, aligning with the lack of other findings and suggesting thoroughness.\"\n    }\n  ],\n  \"overall_confidence\": 0.2,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Expand search parameters to include social media platforms and alternative search engines to verify Hassan's online presence.\"\n}"
+  }
+}

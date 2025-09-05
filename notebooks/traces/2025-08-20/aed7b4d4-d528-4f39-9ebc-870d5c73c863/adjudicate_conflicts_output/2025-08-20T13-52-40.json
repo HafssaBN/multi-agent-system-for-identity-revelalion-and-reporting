@@ -1,0 +1,36 @@
+{
+  "ts": "2025-08-20T13-52-40",
+  "kind": "adjudicate_conflicts_output",
+  "run_id": "aed7b4d4-d528-4f39-9ebc-870d5c73c863",
+  "payload": {
+    "verdicts": [
+      {
+        "fact": "Host name is Abdel based in Marrakech",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.95,
+        "reason": "Directly sourced from Airbnb profile with verified location and guest reviews"
+      },
+      {
+        "fact": "Abdel is a luxury real estate expert in Marrakech",
+        "winner": "open_deep_research",
+        "confidence": 0.75,
+        "reason": "Supported by Instagram profile but lacks direct connection to Airbnb profile"
+      },
+      {
+        "fact": "Abdel Toughrai is a domain investor in Brooklyn",
+        "winner": "open_deep_research",
+        "confidence": 0.6,
+        "reason": "LinkedIn profile exists but no evidence linking to Airbnb host"
+      },
+      {
+        "fact": "Positive guest reviews for communication and cleanliness",
+        "winner": "Airbnb_Analyzer",
+        "confidence": 0.9,
+        "reason": "Specific review data extracted directly from Airbnb listings"
+      }
+    ],
+    "overall_confidence": 0.82,
+    "should_pause_for_human": true,
+    "human_question": "Which Abdel candidate (real estate expert, domain investor, etc.) matches the Airbnb profile's Marrakech location and hospitality focus?"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "ts": "2025-08-20T15-31-23",
+  "kind": "adjudicate_conflicts_response",
+  "run_id": "28792ecc-f137-49f9-90ff-9c43317d59b8",
+  "payload": {
+    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Initial Google search for 'Abdel entrepreneur Marrakech' timed out.\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.2,\n      \"reason\": \"The search timeout indicates no data was collected, making the agent's findings inconclusive. No alternative methods (e.g., reverse image search) were executed to validate the absence of results.\"\n    },\n    {\n      \"fact\": \"No reliable match identified for Abdel's online profile or entrepreneurial activities.\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.1,\n      \"reason\": \"The agent explicitly states no candidates or evidence were found, but this conclusion lacks validation from alternative methods like reverse image search or deeper contextual analysis.\"\n    }\n  ],\n  \"overall_confidence\": 0.15,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Conduct a reverse image search using the provided profile image URL to identify potential matches for Abdel and validate entrepreneurial activities in Marrakech.\"\n}"
+  }
+}
