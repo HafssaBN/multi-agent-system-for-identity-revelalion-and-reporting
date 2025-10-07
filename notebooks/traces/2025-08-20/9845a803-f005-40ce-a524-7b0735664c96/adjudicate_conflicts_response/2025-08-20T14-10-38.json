@@ -1,8 +1,0 @@
-{
-  "ts": "2025-08-20T14-10-38",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "9845a803-f005-40ce-a524-7b0735664c96",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Abdel\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The only agent provided this information, and it is directly sourced from the Airbnb profile.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The URL is explicitly listed in the agent's findings and appears to be a direct link from Airbnb.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"The URLs are directly extracted from the host's Airbnb profile and are valid links.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"The names and locations are derived from guest reviews, which are publicly available on Airbnb, though some entries lack location data.\"\n    }\n  ],\n  \"overall_confidence\": 1.0,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"No conflicting agents to compare; all findings are from a single source (Airbnb_Analyzer).\"\n}"
-  }
-}

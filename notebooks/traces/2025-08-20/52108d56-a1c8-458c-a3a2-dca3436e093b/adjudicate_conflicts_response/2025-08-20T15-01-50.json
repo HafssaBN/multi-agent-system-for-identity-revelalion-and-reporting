@@ -1,8 +1,0 @@
-{
-  "ts": "2025-08-20T15-01-50",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "52108d56-a1c8-458c-a3a2-dca3436e093b",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Abdel\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this fact with no conflicting claims.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL: https://a0.muscache.com/im/pictures/user/User/original/213a678f-2d3c-4b11-886e-df873b318aa4.jpeg?im_w=720\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this fact with no conflicting claims.\"\n    },\n    {\n      \"fact\": \"Listing URLs (10 entries)\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this fact with no conflicting claims.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations (10 entries)\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this fact with no conflicting claims.\"\n    },\n    {\n      \"fact\": \"Follow-up Suggestions (reverse image search, web search, listing investigation)\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this fact with no conflicting claims.\"\n    }\n  ],\n  \"overall_confidence\": 1.0,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"No conflicting data detected. Would you like to proceed with the provided findings or request additional verification steps?\"\n}"
-  }
-}

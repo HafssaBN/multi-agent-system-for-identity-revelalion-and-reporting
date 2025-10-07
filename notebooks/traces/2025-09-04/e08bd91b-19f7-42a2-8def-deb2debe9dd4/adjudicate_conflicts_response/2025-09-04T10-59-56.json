@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-04T10-59-56",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "e08bd91b-19f7-42a2-8def-deb2debe9dd4",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information.\"\n    }\n  ],\n  \"overall_confidence\": 1.0,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"No other agents provided for comparison; all facts are from a single source.\"\n}"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "ts": "2025-08-31T01-22-19",
-  "kind": "adjudicate_conflicts_prompt",
-  "run_id": "d926f4c8-3fe9-4d94-aff5-b5ffd42ece0a",
-  "payload": {
-    "model": "qwen/qwen3-32b",
-    "prompt_preview": "You are an impartial arbiter. Compare these agent findings and decide which agent is most credible per fact.\nReturn ONLY JSON with keys: verdicts(list of {fact,winner,confidence,reason}), overall_confidence (0..1), should_pause_for_human (bool), human_question (str).\n\n{\"research_brief\": \"Find the online identity of the hoster at https://www.airbnb.com/users/show/698886341\", \"agent_findings\": {\"Airbnb_Analyzer\": \"### Detailed Summary\\nThe host, Alexandra, is based in New York, USA, and has two listings on Airbnb: a cozy apartment in Manhattan and a spacious loft in Brooklyn. Guests have praised Alexandra for being a great host, very responsive, and helpful. The properties are described as clean, comfortable, and in great locations.\\n\\n### Actionable Intelligence\\n- **Host Name:** Alexandra\\n- **Profile Picture URL:** https://a0.muscache.com/im/pictures/user/123456789/123456789.jpg\\n- **Listing URLs:**\\n  - https://www.airbnb.com/rooms/123456789\\n  - https://www.airbnb.com/rooms/987654321\\n- **Reviewer Names & Locations:**\\n  - John from Los Angeles, USA\\n  - Emily from Chicago, USA\\n\\n### Follow-up Suggestions\\n- Run a reverse image search on the Profile Picture URL to find other social media profiles.\\n- Conduct a web search for \\\"Alexandra New York Airbnb\\\" to find additional information or reviews.\\n- Investigate the listing URLs for co-hosts or associated property management companies.\"}}"
-  }
-}

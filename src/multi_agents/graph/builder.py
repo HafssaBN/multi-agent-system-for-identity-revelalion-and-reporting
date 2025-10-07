@@ -1,66 +1,72 @@
+# src/multi_agents/graph/builder.py
+from __future__ import annotations
+
+from typing import Any, Dict, Tuple, Callable, cast
+
 from langgraph.graph import StateGraph, END
 from langgraph.pregel import Pregel
+
 from .state import AgentState
 from ..agents.supervisor import Supervisor
-from ..agents.workers import (
-    AirbnbAnalyzer,
-    #WebSearchInvestigator,
-    SocialMediaInvestigator,
-    CrossPlatformValidator,
-    ReportSynthesizer,
-    OpenDeepResearchWorker
-)
+from ..agents.workers import SearchWorker, ImageSearchWorker, ReportSynthesizer
+
 
 class GraphBuilder:
-    def __init__(self):
+    def __init__(self) -> None:
         self.supervisor = Supervisor()
-        self.airbnb_analyzer = AirbnbAnalyzer()
-        self.open_deep_research = OpenDeepResearchWorker()
-        #self.web_search_investigator = WebSearchInvestigator()
-        self.social_media_investigator = SocialMediaInvestigator()
-        self.cross_platform_validator = CrossPlatformValidator()
+        self.search_worker = SearchWorker()
+        self.image_search_worker = ImageSearchWorker()
         self.report_synthesizer = ReportSynthesizer()
-       
-    
+
+    # Generic wrapper: accepts whatever LangGraph passes (state[, config])
+    # and calls .run (preferred) or ._invoke on the underlying object.
+    def _wrap(self, obj: Any, methods: Tuple[str, ...] = ("run", "_invoke")) -> Callable[..., Dict[str, Any]]:
+        def node(*args: Any, **kwargs: Any) -> Dict[str, Any]:
+            # LangGraph usually calls node(state) or node(state, config=...)
+            state = args[0] if args else kwargs.get("state", {})
+            config = None
+            if len(args) >= 2:
+                config = args[1]
+            elif "config" in kwargs:
+                config = kwargs["config"]
+
+            for name in methods:
+                if hasattr(obj, name):
+                    fn = getattr(obj, name)
+                    try:
+                        # Try (state, config) first
+                        return fn(state, config)
+                    except TypeError:
+                        # Fallback to (state) only
+                        return fn(state)
+            raise AttributeError(f"{obj!r} exposes none of {methods}")
+        return node
+
     def build_graph(self) -> Pregel:
         workflow = StateGraph(AgentState)
-        
-        # Add nodes
-        workflow.add_node("supervisor", self.supervisor.run)
-        workflow.add_node("airbnb_analyzer", self.airbnb_analyzer.run)
-        workflow.add_node("open_deep_research", self.open_deep_research.run)
-        #workflow.add_node("web_search_investigator", self.web_search_investigator.run)
-        workflow.add_node("social_media_investigator", self.social_media_investigator.run)
-        workflow.add_node("cross_platform_validator", self.cross_platform_validator.run)
-        workflow.add_node("report_synthesizer", self.report_synthesizer.run)
-        
 
+        # Nodes — cast to Any to satisfy strict Pylance stub expectations
+        workflow.add_node("supervisor", cast(Any, self._wrap(self.supervisor, ("run",))))
+        workflow.add_node("search_worker", cast(Any, self._wrap(self.search_worker)))
+        workflow.add_node("image_search_worker", cast(Any, self._wrap(self.image_search_worker)))
+        workflow.add_node("report_synthesizer", cast(Any, self._wrap(self.report_synthesizer, ("run", "_invoke"))))
 
-        # Define edges
-        workflow.add_edge("airbnb_analyzer", "supervisor")
-        #workflow.add_edge("web_search_investigator", "supervisor")
-        workflow.add_edge("open_deep_research", "supervisor")
-        workflow.add_edge("social_media_investigator", "supervisor")
-        
-        workflow.add_edge("cross_platform_validator", "supervisor")
+        # Edges
+        workflow.add_edge("search_worker", "supervisor")
+        workflow.add_edge("image_search_worker", "supervisor")
         workflow.add_edge("report_synthesizer", END)
-        
-        # Conditional edges from supervisor
+
+        # Routing
         workflow.add_conditional_edges(
             "supervisor",
             self.supervisor.route_to_worker,
             {
-                "airbnb_analyzer": "airbnb_analyzer",
-                "open_deep_research": "open_deep_research",
-                "social_media_investigator": "social_media_investigator",
-                "cross_platform_validator": "cross_platform_validator",
+                "search_worker": "search_worker",
+                "image_search_worker": "image_search_worker",
                 "report_synthesizer": "report_synthesizer",
-                
-                "end": END
-            }
+                "end": END,
+            },
         )
-        
-        # Set entry point
+
         workflow.set_entry_point("supervisor")
-        
         return workflow.compile()

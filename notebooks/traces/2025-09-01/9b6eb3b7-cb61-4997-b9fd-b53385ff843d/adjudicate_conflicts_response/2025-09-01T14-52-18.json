@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-01T14-52-18",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "9b6eb3b7-cb61-4997-b9fd-b53385ff843d",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Directly extracted from Airbnb profile data with no conflicting information.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"Valid URL structure and domain alignment with Airbnb's image hosting protocol.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.85,\n      \"reason\": \"URL format matches Airbnb's standard room listing structure.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.75,\n      \"reason\": \"Names and locations appear consistent with typical Airbnb review metadata patterns.\"\n    }\n  ],\n  \"overall_confidence\": 0.87,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Are there additional agents or data sources to cross-verify Hassan's identity beyond Airbnb's platform?\"\n}"
-  }
-}

@@ -43,9 +43,9 @@ class Constants:
     SUPERVISOR_MODEL = "meta-llama/llama-3.3-70b-instruct" 
     
     # Fast, free, and agent-tuned model for the workers' tool-use loops.
-    WORKER_MODEL = "qwen/qwen3-30b-a3b-instruct-2507"
-    
-    
+    WORKER_MODEL = "qwen/qwen3-235b-a22b-2507"
+    JUDGE_MODEL = "qwen/qwen3-coder"
+    LEAK_LOOKUP_KEY = "18a7359ed53ea49356cad4b1d8d7a9aa"
     # Keep a default for other potential uses
     DEFAULT_MODEL = "meta-llama/llama-3.3-70b-instruct"
 
@@ -75,12 +75,13 @@ class Constants:
     VISION_MODEL = "qwen/qwen2.5-vl-32b-instruct"
     
     ADVANCED_SERP_BUDGET = int(os.getenv("ADVANCED_SERP_BUDGET", "12"))
-    
+    APIFY_API_TOKEN = os.getenv("APIFY_API_TOKEN", "")   # set in .env
+    APIFY_LINKEDIN_ACTOR_ID = os.getenv("APIFY_LINKEDIN_ACTOR_ID", "pIyH7237rHZBxoO7q")
 # === Your Instagram cookies here (replace with valid values) ===
 COOKIES = {
-    "sessionid": unquote(os.getenv("INSTA_SESSIONID", "")),
-    "ds_user_id": os.getenv("INSTA_DS_USER_ID", ""),
-    "csrftoken": os.getenv("INSTA_CSRFTOKEN", ""),
+    "sessionid": unquote(os.getenv("INSTA_SESSIONID", "62433026643%3A5epK7rADBvHeyj%3A3%3AAYjXIg2smqhHLjYAHW16Zhmke1IMuexcaXP-SXxOUg")),
+    "ds_user_id": os.getenv("INSTA_DS_USER_ID", "62433026643"),
+    "csrftoken": os.getenv("INSTA_CSRFTOKEN", "qAMZ73ssUuWRe_P5yxHIcc"),
 }
 
 

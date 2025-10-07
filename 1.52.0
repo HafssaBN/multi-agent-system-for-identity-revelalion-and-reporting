@@ -1,0 +1,4 @@
+Requirement already satisfied: playwright in c:\users\hafss\onedrive\desktop\all the etst\web-ui\venv\lib\site-packages (1.40.0)
+Requirement already satisfied: greenlet==3.0.1 in c:\users\hafss\onedrive\desktop\all the etst\web-ui\venv\lib\site-packages (from playwright) (3.0.1)
+Requirement already satisfied: pyee==11.0.1 in c:\users\hafss\onedrive\desktop\all the etst\web-ui\venv\lib\site-packages (from playwright) (11.0.1)
+Requirement already satisfied: typing-extensions in c:\users\hafss\onedrive\desktop\all the etst\web-ui\venv\lib\site-packages (from pyee==11.0.1->playwright) (4.14.1)

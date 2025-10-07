@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-05T14-30-42",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "5cdf4743-292c-4462-ae6a-ee81a84fc00b",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Hassan Belhaj is an Executive Director at English Language Centre of Tangier\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.6,\n      \"reason\": \"Closely matches the location (Tangier) and language education context, though the role is administrative rather than teaching French.\"\n    },\n    {\n      \"fact\": \"Hassan Khedda is an English teacher on LinkedIn\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.4,\n      \"reason\": \"Matches the teaching profession but not the French language or Tangier location.\"\n    },\n    {\n      \"fact\": \"French language learning is mentioned in a Medium post about Morocco\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.3,\n      \"reason\": \"Provides contextual relevance to French education in Morocco but lacks direct linkage to Hassan.\"\n    }\n  ],\n  \"overall_confidence\": 0.45,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Are there additional details about Hassan's profile image or metadata that could refine the search for a French teacher in Tangier?\"\n}"
-  }
-}

@@ -28,3 +28,24 @@ rich
 loguru
 nest_asyncio
 certifi
+google-search-results
+python-whois 
+waybackpy 
+hachoir
+lxml 
+python-whois 
+waybackpy 
+hachoir 
+dnspython 
+requests-html 
+builtwith 
+pyhibp 
+phonenumbers
+apify-client 
+duckdb 
+pandas
+python-dotenv
+pyppeteer 
+nest_asyncio
+pyee==11.1.0
+-e .

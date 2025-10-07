@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-01T14-17-02",
-  "kind": "adjudicate_conflicts_response_retry",
-  "run_id": "4fe32ad1-dbe0-46be-9ab9-8a4fc3dfde68",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Directly extracted from Airbnb profile with no conflicting data.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Provided a valid URL from Airbnb's official domain.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Included a specific Airbnb listing URL for verification.\"\n    },\n    {\n      \"fact\": \"Image Search Results\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.85,\n      \"reason\": \"open_deep_research results are irrelevant (Arabic Wikipedia pages about medical terms).\"\n    }\n  ],\n  \"overall_confidence\": 0.92,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Should we prioritize verifying the profile picture's reverse image search?\"\n}"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-01T15-05-28",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "db63433d-7ddd-4beb-a879-972867eff74b",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Directly extracted from Airbnb profile data with no conflicting sources.\"\n    },\n    {\n      \"fact\": \"Location: Tangier, Morocco\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"Consistent with listing location and host's professional context (French teacher).\"\n    },\n    {\n      \"fact\": \"Listing URL: https://www.airbnb.com/rooms/1464489937221305511\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.98,\n      \"reason\": \"Valid URL format and matches the host's single-listing claim.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL: https://a0.muscache.com/im/pictures/...\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.97,\n      \"reason\": \"Direct link from Airbnb profile, verifiable via reverse image search.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations (e.g., Omar from Unknown)\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.85,\n      \"reason\": \"Extracted from public reviews, though some locations are unspecified.\"\n    }\n  ],\n  \"overall_confidence\": 0.92,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Would you like to proceed with the suggested follow-up actions (e.g., reverse image search, web search for 'Hassan French teacher Tangier')?\"\n}"
-  }
-}

@@ -5,7 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableConfig
 from typing import Optional
-from ..tools import  insta_tools, search_tools, vision_tools
+from ..tools import  insta_toolsX, search_tools, vision_tools
 from ..constants.constants import Constants
 import logging
 from langchain_core.messages import HumanMessage, AIMessage
@@ -667,11 +667,11 @@ class OpenDeepResearchWorker:
 class SocialMediaInvestigator(BaseWorker):
     def __init__(self):
         tools = [
-                insta_tools.get_instagram_user_info,
-                insta_tools.get_instagram_user_followers,
-                insta_tools.get_instagram_user_following,
-                insta_tools.get_instagram_user_posts,
-                insta_tools.download_image,
+                insta_toolsX.get_instagram_user_info,
+                insta_toolsX.get_instagram_user_followers,
+                insta_toolsX.get_instagram_user_following,
+                insta_toolsX.get_instagram_user_posts,
+                insta_toolsX.download_image,
                 ]
         
         persona = """Your specialization is **Social Network Analysis**. You are the social profiler, an expert in the culture and structure of online communities like Instagram, Facebook, and LinkedIn. You understand how people connect and share online. Your mission is to find the target's social media presence, analyze their network, and extract key details from their profiles and posts."""

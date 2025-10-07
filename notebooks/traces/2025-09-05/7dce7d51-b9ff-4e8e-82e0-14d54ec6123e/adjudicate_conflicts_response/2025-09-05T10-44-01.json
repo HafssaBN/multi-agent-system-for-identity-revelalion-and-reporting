@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-05T10-44-01",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "7dce7d51-b9ff-4e8e-82e0-14d54ec6123e",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Directly extracted from Airbnb profile with contextual details and actionable intelligence.\"\n    },\n    {\n      \"fact\": \"Host Profession: French teacher from Tangier, Morocco\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"Self-reported on Airbnb profile with no conflicting data from open_deep_research.\"\n    },\n    {\n      \"fact\": \"Listing Details: Single, well-maintained apartment with positive reviews\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.85,\n      \"reason\": \"Supported by guest reviews and listing URL provided, no contradictory evidence.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL: https://a0.muscache.com/im/pictures/user/User/original/e925659d-c53f-4d10-a029-65113eb66ace.jpeg?im_w=720\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"Valid URL extracted from Airbnb profile; open_deep_research confirmed no text content but did not dispute authenticity.\"\n    }\n  ],\n  \"overall_confidence\": 0.9,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Should we prioritize reverse image search on the profile picture URL to identify potential social media profiles?\"\n}"
-  }
-}

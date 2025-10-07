@@ -1,8 +1,0 @@
-{
-  "ts": "2025-08-20T14-11-49",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "e1f4ce02-d2b0-42ad-8aca-3218403f91d9",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Abdel is an official guide in Marrakech with 5 years of experience.\",\n      \"winner\": \"Tripadvisor\",\n      \"confidence\": 0.9,\n      \"reason\": \"Tripadvisor is a trusted platform for verified reviews and professional service providers.\"\n    },\n    {\n      \"fact\": \"Abdel Toughrai is a domain investor and web entrepreneur.\",\n      \"winner\": \"LinkedIn\",\n      \"confidence\": 0.85,\n      \"reason\": \"LinkedIn profiles are typically verified and provide detailed professional credentials.\"\n    },\n    {\n      \"fact\": \"Abdel Houachmi plans to open two restaurants in Marrakech.\",\n      \"winner\": \"africabusinessplus.com\",\n      \"confidence\": 0.75,\n      \"reason\": \"News articles from business-focused outlets provide contextual validation for entrepreneurial ventures.\"\n    },\n    {\n      \"fact\": \"Abdel is highly recommended as a guide in Marrakech.\",\n      \"winner\": \"Tripadvisor\",\n      \"confidence\": 0.9,\n      \"reason\": \"Tripadvisor user reviews and ratings are widely recognized for service quality validation.\"\n    }\n  ],\n  \"overall_confidence\": 0.8,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Which Abdel (Toughrai, Houachmi, or unnamed guide) is associated with the provided profile image?\"\n}"
-  }
-}

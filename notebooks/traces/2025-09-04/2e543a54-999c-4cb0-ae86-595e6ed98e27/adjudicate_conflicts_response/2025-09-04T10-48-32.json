@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-04T10-48-32",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "2e543a54-999c-4cb0-ae86-595e6ed98e27",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 1.0,\n      \"reason\": \"Only one agent provided this information.\"\n    }\n  ],\n  \"overall_confidence\": 1.0,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"No conflicting agents to compare. All findings are from a single source. Would you like to request additional agent analysis for cross-verification?\"\n}"
-  }
-}

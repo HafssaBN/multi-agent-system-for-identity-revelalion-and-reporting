@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-05T14-31-02",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "22b9dc7c-6ed9-481a-b52b-9e448bc3072d",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [],\n  \"overall_confidence\": 0,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Only one agent's findings were provided (Airbnb_Analyzer). Please supply additional agent data for comparison before proceeding.\"\n}"
-  }
-}

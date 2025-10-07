@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-04T10-44-32",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "65237362-5235-41fc-9142-2e8648724fc0",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Name is directly provided and consistent with the listing context.\"\n    },\n    {\n      \"fact\": \"Profile Picture URL\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"URL is specific and verifiable via reverse image search.\"\n    },\n    {\n      \"fact\": \"Listing URLs\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"URLs are direct links to Airbnb listings, which are publicly accessible.\"\n    },\n    {\n      \"fact\": \"Reviewer Names & Locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.7,\n      \"reason\": \"Some reviewers are listed as 'Unknown,' reducing overall credibility for this fact.\"\n    }\n  ],\n  \"overall_confidence\": 0.88,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"Are there additional agents or data sources to cross-verify these findings?\"\n}"
-  }
-}

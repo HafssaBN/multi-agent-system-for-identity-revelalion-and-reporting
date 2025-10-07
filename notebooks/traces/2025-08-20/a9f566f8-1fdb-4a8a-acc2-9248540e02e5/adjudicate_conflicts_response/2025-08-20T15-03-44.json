@@ -1,8 +1,0 @@
-{
-  "ts": "2025-08-20T15-03-44",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "a9f566f8-1fdb-4a8a-acc2-9248540e02e5",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Initial Google search for 'Abdel entrepreneur Marrakeh' timed out\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.2,\n      \"reason\": \"The search attempt failed due to a timeout, indicating limited credibility in the findings. No alternative search methods were executed.\"\n    },\n    {\n      \"fact\": \"Reverse image search not conducted\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.1,\n      \"reason\": \"The agent explicitly states no reverse image search was performed, leaving no evidence to assess credibility for this fact.\"\n    },\n    {\n      \"fact\": \"Recommendation to perform reverse image search and detailed web search\",\n      \"winner\": \"direct_search_summary\",\n      \"confidence\": 0.8,\n      \"reason\": \"The agent acknowledges the need for further investigation and provides actionable next steps, which is a credible and transparent conclusion.\"\n    }\n  ],\n  \"overall_confidence\": 0.37,\n  \"should_pause_for_human\": true,\n  \"human_question\": \"Please perform a reverse image search on the provided URL and attempt a more detailed web search for 'Abdel entrepreneur Marrakech' using additional keywords or context.\"\n}"
-  }
-}

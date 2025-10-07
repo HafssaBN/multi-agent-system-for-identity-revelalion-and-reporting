@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-03T20-15-14",
-  "kind": "adjudicate_conflicts_response",
-  "run_id": "2877f51a-ed89-4bbb-a2d7-b2821451763d",
-  "payload": {
-    "raw_text_preview": "{\n  \"verdicts\": [\n    {\n      \"fact\": \"Host Name: Hassan\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.95,\n      \"reason\": \"Directly extracted from the profile summary with no conflicting data.\"\n    },\n    {\n      \"fact\": \"Host Location: Tangier, Morocco\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.9,\n      \"reason\": \"Mentioned in the summary but not explicitly verified via external sources.\"\n    },\n    {\n      \"fact\": \"Listing URLs provided\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.98,\n      \"reason\": \"URLs are directly linked to the host's listing and appear valid.\"\n    },\n    {\n      \"fact\": \"Reviewer names and locations\",\n      \"winner\": \"Airbnb_Analyzer\",\n      \"confidence\": 0.85,\n      \"reason\": \"Names and locations are listed but lack independent verification.\"\n    }\n  ],\n  \"overall_confidence\": 0.92,\n  \"should_pause_for_human\": false,\n  \"human_question\": \"No conflicting agents to compare; all facts derive from a single source. Consider verifying URLs and profile data manually for higher confidence.\"\n}"
-  }
-}

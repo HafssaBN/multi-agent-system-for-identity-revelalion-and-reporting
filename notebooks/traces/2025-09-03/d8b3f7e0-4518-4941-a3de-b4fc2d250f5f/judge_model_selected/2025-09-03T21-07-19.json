@@ -1,8 +1,0 @@
-{
-  "ts": "2025-09-03T21-07-19",
-  "kind": "judge_model_selected",
-  "run_id": "d8b3f7e0-4518-4941-a3de-b4fc2d250f5f",
-  "payload": {
-    "judge_model": "qwen/qwen3-32b"
-  }
-}

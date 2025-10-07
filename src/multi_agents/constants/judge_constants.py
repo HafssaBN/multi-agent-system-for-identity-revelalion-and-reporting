@@ -15,7 +15,7 @@ class JudgeConstants:
 
     # --- primary judge model (default: cheap + capable) ---
     # 👉 This is the default judge — the single model used if we don’t enable committee, router, or SMoA.
-    JUDGE_MODEL = os.getenv("JUDGE_MODEL", "qwen/qwen3-32b")
+    JUDGE_MODEL = os.getenv("JUDGE_MODEL", "qwen/qwen3-coder")
 
     # --- committee of judges for MoA-style ensembling ---
     # Used if JUDGE_ENABLE_COMMITTEE=1

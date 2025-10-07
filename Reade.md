@@ -1,0 +1,2 @@
+ run the backend : uvicorn agent_server:app --host 0.0.0.0 --port 8008 --reload --log-level debug
+ run frontend : C:\Users\hafss\OneDrive\Desktop\Final\multi-agent-system-for-identity-revelalion-and-reporting\agent_backend>open-webui serve

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head><script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script></head>
+<body><div class="mermaid">---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	supervisor(supervisor)
+	multi_web_search_investigator(multi_web_search_investigator)
+	multi_image_search_investigator(multi_image_search_investigator)
+	multi_social_media_investigator(multi_social_media_investigator)
+	report_synthesizer(report_synthesizer)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> supervisor;
+	multi_image_search_investigator --> supervisor;
+	multi_social_media_investigator --> supervisor;
+	multi_web_search_investigator --> supervisor;
+	supervisor -. &nbsp;end&nbsp; .-> __end__;
+	supervisor -.-> multi_image_search_investigator;
+	supervisor -.-> multi_social_media_investigator;
+	supervisor -.-> multi_web_search_investigator;
+	supervisor -.-> report_synthesizer;
+	report_synthesizer --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
+</div>
+<script>mermaid.initialize({startOnLoad: true});</script></body></html>
